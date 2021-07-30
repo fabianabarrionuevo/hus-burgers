@@ -1,0 +1,631 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, p, h1, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #151719;
+  background-image: linear-gradient(#151719 25%, #f0be3b 95%);
+  color: #fefbf9;
+  font-family: "Lato", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fefbf9;
+  display: inline-block;
+}
+
+#logoNav, #logoFooter {
+  border-radius: 50%;
+  width: 60%;
+}
+
+#logoNav:hover, #logoFooter:hover {
+  transform: scale(1.1);
+}
+
+/**** HEADER ****/
+header {
+  height: 22vh;
+}
+
+/* daatos de contacto navbar*/
+.contact-nav {
+  background-color: #ea3048;
+  font-size: 0.8rem;
+}
+
+.contact-nav__list {
+  overflow: hidden;
+}
+
+.contact-nav__li {
+  padding: 0.4rem 0.5rem;
+}
+
+.contact-nav__link {
+  display: flex;
+}
+
+.contact-nav__icon {
+  margin: 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-nav__text {
+  display: none;
+}
+
+.contact-nav__li--left {
+  float: left;
+}
+
+.contact-nav__li--right, .contact-nav__li--tel {
+  float: right;
+}
+
+.contact-nav__li:hover .contact-nav__link {
+  color: #151719;
+}
+
+/* barra de navegacion*/
+.headerNav {
+  background-color: #151719;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.logoNav {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  width: 8rem;
+  display: none;
+}
+
+.title {
+  height: auto;
+  width: 100%;
+  padding: 5px 0px 2px;
+}
+.title h1 {
+  color: #fefbf9;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 3rem;
+  word-spacing: -1rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+.title h1 span {
+  color: #ea3048;
+  font-style: italic;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+.navbar-toggler {
+  position: absolute;
+  top: 1rem;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0;
+}
+
+.fa-bars {
+  font-size: 2rem;
+  color: #fefbf9;
+  margin: 0;
+}
+
+.navbar-collapse {
+  justify-content: center;
+  z-index: 100;
+  background-color: #151719;
+}
+
+.nav-item {
+  padding: 0px 7px;
+}
+
+.nav-link {
+  color: #fefbf9;
+}
+.nav-link:hover {
+  color: #ea3048;
+  transition: 0.5s;
+}
+
+.focus-nav a {
+  color: #ea3048;
+  font-weight: 900;
+}
+
+/* titulos principales de cada pagina */
+.pageTitle {
+  color: #f0be3b;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: 20px auto;
+  width: fit-content;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s;
+}
+.pageTitle:hover, .pageTitle:focus {
+  background-size: 100% 2px;
+}
+
+/**** FOOTER ****/
+.footer {
+  background-color: #f0be3b;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footer .footer-item {
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+}
+.footer .footer-item .footer__list .footer__li {
+  padding: 4px;
+  font-weight: 900;
+}
+.footer .footer-item .footer__list .footer__link {
+  color: #151719;
+  text-transform: capitalize;
+}
+.footer .footer-item .footer__list .footer__link:hover {
+  color: #fefbf9;
+}
+
+.footer-icons__link {
+  padding: 10px;
+}
+
+.footer-icons__img {
+  width: 45px;
+}
+.footer-icons__img:hover {
+  transform: rotate(-20deg);
+}
+
+/*/// HOME ///*/
+.home-container {
+  height: 80vh;
+}
+
+/* carousel */
+.carousel-section {
+  margin: 1rem 0;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 350px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-inner .item-1 {
+  background-image: url("../multimedia/img/carousel/michael-wave-G3tRHpENRTs-unsplash.jpg");
+}
+.carousel-inner .item-2 {
+  background-image: url("../multimedia/img/carousel/niklas-rhose-FlmXvqlD-nI-unsplash.jpg");
+}
+.carousel-inner .item-3 {
+  background-image: url("../multimedia/img/carousel/peter-dawn-sxZ_Ca6MkWM-unsplash.jpg");
+}
+
+@media (max-width: 600px) {
+  .carousel-item {
+    height: 280px;
+  }
+}
+/* categorias de productos */
+.categories__list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.categories__li:hover .categories__img {
+  transform: scale(0.9);
+  transition: 0.3s;
+  color: #fefbf9;
+}
+.categories__li:hover .categories__title {
+  transform: scale(1.1);
+  transition: 0.3s;
+  color: #fefbf9;
+}
+
+.categories__img {
+  width: 4.5rem;
+  border: solid 3px #fcf6f2;
+}
+
+.categories__title {
+  text-transform: capitalize;
+  text-align: center;
+  color: transparent;
+  font-size: 0.77rem;
+}
+
+/* seccion de productos y más*/
+.sectionContent {
+  width: 90%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 35px;
+  justify-content: center;
+}
+
+.item {
+  display: inline-block;
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 270px;
+  box-shadow: 8px 10px 15px 2px #000;
+  justify-self: center;
+}
+.item:hover {
+  box-shadow: 8px 10px 15px 9px #000;
+}
+.item:hover .item__link {
+  color: #fefbf9;
+}
+.item .item__img {
+  width: 17rem;
+  z-index: 1;
+}
+.item .item__title {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 8px 0px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+/* MAIN SECTIONS */
+main {
+  width: 90%;
+  margin: 20px auto;
+  min-height: 80vh;
+}
+
+/*/// PRODUCTOS ///*/
+/* nabvar bootstrap */
+.nav-tabs {
+  border-bottom: 1px solid #f0be3b;
+}
+.nav-tabs .nav-link {
+  color: #151719;
+  background-color: #f0be3b;
+  border-color: #f0be3b;
+  box-shadow: 10px 10px 10px #151719;
+  padding: 0.4rem;
+}
+.nav-tabs .nav-link h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.nav-tabs .nav-link h3::first-letter {
+  text-transform: uppercase;
+}
+.nav-tabs .nav-item {
+  padding: 2px;
+}
+
+.productCategory {
+  text-align: center;
+  margin: 20px 0;
+}
+.productCategory .item {
+  margin: 10px;
+}
+.productCategory .item__image {
+  height: 270px;
+  width: 270px;
+}
+
+/* List / Maps of products images */
+.item-tradicional .item__image {
+  background-image: url("../multimedia/img/tradicional/tradicional-carne vacuna.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 1s;
+}
+
+.item-bajoCero1 .item__image {
+  background-image: url("../multimedia/img/bajo cero/bajo cero-100 carne vacuna.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 1s;
+}
+
+.item-bajoCero2 .item__image {
+  background-image: url("../multimedia/img/bajo cero/bajo cero-100 pechuga.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 1s;
+}
+
+.item-parmesano .item__image {
+  background-image: url("../multimedia/img/gold/gold-parmesano.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 1s;
+}
+
+.item-brasas .item__image {
+  background-image: url("../multimedia/img/gold/gold-a las brasas.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 1s;
+}
+
+.item-bacon .item__image {
+  background-image: url("../multimedia/img/gold/gold-cheese & bacon.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 1s;
+}
+
+.item-pork .item__image {
+  background-image: url("../multimedia/img/gold/gold-sweet pork.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 1s;
+}
+
+.item-tradicional:hover .item__image {
+  background-image: url("../multimedia/img/tradicional/recuadro-tradicional 2.jpg");
+}
+
+.item-bajoCero1:hover .item__image {
+  background-image: url("../multimedia/img/bajo cero/bajoCeroCarne.jpg");
+}
+
+.item-bajoCero2:hover .item__image {
+  background-image: url("../multimedia/img/bajo cero/bajoCeroPollo.jpg");
+}
+
+.item-parmesano:hover .item__image {
+  background-image: url("../multimedia/img/gold/burger-parmesano.jpg");
+}
+
+.item-brasas:hover .item__image {
+  background-image: url("../multimedia/img/gold/burger-brasas.jpg");
+}
+
+.item-bacon:hover .item__image {
+  background-image: url("../multimedia/img/gold/cheese-and-bacon2.jpg");
+}
+
+.item-pork:hover .item__image {
+  background-image: url("../multimedia/img/gold/burger-sweetPork.jpg");
+}
+
+/*/// NOSOTROS ///*/
+.logos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+.logos img {
+  width: 28%;
+  min-width: 100px;
+  border-radius: 10%;
+}
+
+/*/// DONDE ESTAMOS ///*/
+/*contacto*/
+.contactOrder {
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* comercios amigos*/
+.friendShop {
+  text-align: center;
+  margin: 20px auto;
+}
+.friendShop .pageTitle {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+.friendShop .shop {
+  display: inline-block;
+  text-align: center;
+  margin: 25px;
+}
+.friendShop .shop .shop-title {
+  text-transform: capitalize;
+}
+.friendShop .shop a {
+  color: #fefbf9;
+}
+.friendShop .shop a:hover {
+  color: #f0be3b;
+}
+
+/*/// CONTACTO ///*/
+.contact {
+  margin: 50px auto;
+}
+
+.contact__list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.contact__item .contact__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+.contact__item .contact__link:hover {
+  color: #f0be3b;
+  transition: all 0.3s;
+}
+.contact__item .contact__icon {
+  font-size: 2rem;
+  padding-bottom: 8px;
+}
+
+.form-section {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+iframe {
+  margin: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/*/// 404 NOT FOUND ///*/
+.container-page-error {
+  height: 100vh;
+  position: relative;
+}
+
+.container-text {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container-text .page-error-icon {
+  font-size: 4rem;
+}
+.container-text .page-error-icon .fa-sad-tear {
+  padding: 2%;
+  font-size: 3.7rem;
+}
+.container-text .page-error-title {
+  text-transform: uppercase;
+}
+.container-text .page-error-text::first-letter {
+  text-transform: capitalize;
+}
+.container-text .back-button {
+  padding: 10px;
+  margin-top: 4rem;
+  border-radius: 15px;
+  background-color: #edb115;
+  color: #151719;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+.container-text .back-button:hover {
+  transform: scale(1.1);
+  background-color: #f0be3b;
+}
+
+/*//////  MEDIA QUERYS //////*/
+@media (max-width: 600px) {
+  .carousel-item {
+    height: 280px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .contact-nav__text {
+    display: block;
+  }
+
+  .contact-nav__li--left, .contact-nav__li--tel {
+    float: left;
+  }
+
+  .sectionContent {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .categories__title {
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 20px 0;
+  }
+
+  .container-text .page-error-icon {
+    font-size: 5rem;
+  }
+  .container-text .page-error-icon .fa-sad-tear {
+    padding: 1%;
+    font-size: 4.4rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .logoNav {
+    display: block;
+    width: 10rem;
+  }
+
+  .container-fluid {
+    flex-direction: column;
+  }
+
+  .categories {
+    margin: 0 15%;
+  }
+  .categories img {
+    width: 5rem;
+  }
+
+  .sectionContent {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  main {
+    margin: 3rem auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
