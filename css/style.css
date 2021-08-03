@@ -39,7 +39,7 @@ a {
 
 /**** HEADER ****/
 header {
-  height: 22vh;
+  height: 20vh;
 }
 
 /* daatos de contacto navbar*/
@@ -216,7 +216,7 @@ header {
 
 /*/// HOME ///*/
 .home-container {
-  height: 80vh;
+  height: 70vh;
 }
 
 /* carousel */
@@ -255,17 +255,6 @@ header {
   justify-content: space-around;
 }
 
-.categories__li:hover .categories__img {
-  transform: scale(0.9);
-  transition: 0.3s;
-  color: #fefbf9;
-}
-.categories__li:hover .categories__title {
-  transform: scale(1.1);
-  transition: 0.3s;
-  color: #fefbf9;
-}
-
 .categories__img {
   width: 4.5rem;
   border: solid 3px #fcf6f2;
@@ -274,8 +263,8 @@ header {
 .categories__title {
   text-transform: capitalize;
   text-align: center;
-  color: transparent;
-  font-size: 0.77rem;
+  font-size: 0.9rem;
+  color: #fefbf9;
 }
 
 /* seccion de productos y más*/
@@ -582,6 +571,10 @@ form {
     float: left;
   }
 
+  .home-container {
+    height: 80vh;
+  }
+
   .sectionContent {
     grid-template-columns: 1fr 1fr;
   }
@@ -617,6 +610,20 @@ form {
   }
   .categories img {
     width: 5rem;
+  }
+
+  .categories__title {
+    color: transparent;
+  }
+
+  .categories__li:hover .categories__img {
+    transform: scale(0.9);
+    transition: 0.3s;
+  }
+  .categories__li:hover .categories__title {
+    transform: scale(1.1);
+    transition: 0.3s;
+    color: #fefbf9;
   }
 
   .sectionContent {
