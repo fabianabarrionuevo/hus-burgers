@@ -317,6 +317,7 @@ $carouselImage: (
   min-width: 250px;
   min-height: 250px;
   max-width: 270px;
+  max-height: 315px;
   box-shadow: 8px 10px 15px 2px #000;
   justify-self: center;
   &:hover{
@@ -380,12 +381,29 @@ main {
 .productCategory {
   text-align: center;
   margin: 20px 0;
-  .item {
-    margin: 10px;
-  }
-  .item__image {
-    height: 270px;
-    width: 270px;
+  article {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 10px;
+    .item__image {
+      height: 270px;
+      width: 270px;
+    }
+    .item__title { 
+      display: none;
+    }
+    .description {
+      margin-top: 1.5rem;
+      padding: 0px 5%;
+      h4 {
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      p {
+        letter-spacing: 0.1rem;
+        margin-top: 15px;
+      }
+    }
   }
 }
 
@@ -609,6 +627,22 @@ form {
       }
     }
   }
+
+  .productCategory {
+    article {
+      grid-template-columns: 300px 1fr;
+      grid-gap: 1rem;
+      padding: 10px;
+      .item__title {
+        display: block;
+      }
+      .description {
+        p {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
 }
 
 
@@ -652,6 +686,18 @@ form {
   main {
     margin: 3rem auto;
   }
+
+  .productCategory {
+    article {
+      grid-template-columns: 350px 1fr;
+      .description {
+        padding: 0px 10% 0px 5%;
+        p {
+          padding: 5px 0px;
+        }
+      }
+      }
+    }
 
 }
 
