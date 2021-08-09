@@ -364,7 +364,7 @@ main {
   border-radius: 10px;
   justify-self: center;
   align-self: start;
-  width: 250px;
+  width: 255px;
   padding: 0px 2% 10px;
   position: relative;
   margin-top: -14px;
@@ -668,8 +668,8 @@ form {
     max-height: 350px;
   }
   .productCategory article .item .item__image {
-    height: 290px;
-    width: 290px;
+    height: 280px;
+    width: 280px;
   }
   .productCategory article .description {
     width: 260px;
@@ -714,11 +714,20 @@ form {
     margin: 3rem auto;
   }
 
+  .productCategory {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
   .productCategory article .description {
     padding: 0px 5%;
   }
   .productCategory article .description p {
     padding: 5px 0px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .productCategory {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
