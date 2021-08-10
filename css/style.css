@@ -86,12 +86,19 @@ header {
 
 /* barra de navegacion*/
 .headerNav {
-  background-color: transparent;
+  background-color: #151719;
+  background-image: url(../multimedia/img/pat.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   width: 100%;
-  height: auto;
+  height: 105px;
   padding: 0;
+  position: sticky;
+  top: 0px;
+  z-index: 101;
 }
 
 .logoNav {
@@ -121,7 +128,7 @@ header {
   font-style: italic;
   font-size: 1.5rem;
   text-transform: lowercase;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0;
 }
 
@@ -143,6 +150,7 @@ header {
   justify-content: center;
   z-index: 100;
   background-color: #151719;
+  background-image: url(../multimedia/img/pat.svg);
 }
 
 .nav-item {
@@ -488,17 +496,61 @@ main {
 }
 
 /*/// NOSOTROS ///*/
-.logos {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5%;
+.nosotros {
+  width: 90%;
+  margin: 0 auto;
 }
-.logos img {
-  width: 28%;
-  min-width: 100px;
-  border-radius: 10%;
+.nosotros .somos-hus {
+  display: none;
+  width: 405px;
+  height: 40px;
+  margin: 8% auto;
+  font-size: 2.3rem;
+  line-height: 40px;
+  overflow: hidden;
+  color: #fefbf9;
+  text-transform: uppercase;
+}
+.nosotros .somos-hus ul {
+  padding-left: 0.5rem;
+  animation: cambiar 7s infinite;
+  color: #ea3048;
+  font-style: italic;
+  text-transform: capitalize;
+}
+.nosotros .sobre-nosotros {
+  letter-spacing: 0.15rem;
 }
 
+@keyframes cambiar {
+  0% {
+    marigin-top: 0;
+  }
+  20% {
+    margin-top: 0;
+  }
+  25% {
+    margin-top: -40px;
+  }
+  50% {
+    margin-top: -40px;
+  }
+  55% {
+    margin-top: -80px;
+  }
+  80% {
+    margin-top: -80px;
+  }
+  85% {
+    margin-top: -40px;
+  }
+  95% {
+    margin-top: -40px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
 /*/// DONDE ESTAMOS ///*/
 /*contacto*/
 .contactOrder {
@@ -674,11 +726,19 @@ form {
   .productCategory article .description {
     width: 260px;
   }
+
+  .nosotros .somos-hus {
+    display: flex;
+  }
 }
 @media only screen and (min-width: 992px) {
   .logoNav {
     display: block;
     width: 10rem;
+  }
+
+  .navbar-collapse {
+    background-color: transparent;
   }
 
   .container-fluid {
