@@ -159,6 +159,7 @@ a {
 .nav-link:hover {
   color: #ea3048;
   transition: 0.5s;
+  -moz-transition: 0.5s;
 }
 
 .focus-nav a {
@@ -409,6 +410,7 @@ main {
 }
 .productCategory article .description .button-list .button-item .comprar {
   width: fit-content;
+  width: max-content;
   padding: 1px 55px;
   text-transform: capitalize;
   margin-top: 5px;
@@ -419,77 +421,84 @@ main {
   background-image: url("../multimedia/img/tradicional/tradicional-carne vacuna.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 1s;
 }
 
 .item-bajoCero1 .item__image {
   background-image: url("../multimedia/img/bajo cero/bajo cero-100 carne vacuna.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 1s;
 }
 
 .item-bajoCero2 .item__image {
   background-image: url("../multimedia/img/bajo cero/bajo cero-100 pechuga.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 1s;
 }
 
 .item-parmesano .item__image {
   background-image: url("../multimedia/img/gold/gold-parmesano.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 1s;
 }
 
 .item-brasas .item__image {
   background-image: url("../multimedia/img/gold/gold-a las brasas.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 1s;
 }
 
 .item-bacon .item__image {
   background-image: url("../multimedia/img/gold/gold-cheese & bacon.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 1s;
 }
 
 .item-pork .item__image {
   background-image: url("../multimedia/img/gold/gold-sweet pork.jpg");
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 1s;
 }
 
 .item-tradicional:hover .item__image {
   background-image: url("../multimedia/img/tradicional/recuadro-tradicional 2.jpg");
+  transition: all 1s;
+  -moz-transition: all 1s;
 }
 
 .item-bajoCero1:hover .item__image {
   background-image: url("../multimedia/img/bajo cero/bajoCeroCarne.jpg");
+  transition: all 1s;
+  -moz-transition: all 1s;
 }
 
 .item-bajoCero2:hover .item__image {
   background-image: url("../multimedia/img/bajo cero/bajoCeroPollo.jpg");
+  transition: all 1s;
+  -moz-transition: all 1s;
 }
 
 .item-parmesano:hover .item__image {
   background-image: url("../multimedia/img/gold/burger-parmesano.jpg");
+  transition: all 1s;
+  -moz-transition: all 1s;
 }
 
 .item-brasas:hover .item__image {
   background-image: url("../multimedia/img/gold/burger-brasas.jpg");
+  transition: all 1s;
+  -moz-transition: all 1s;
 }
 
 .item-bacon:hover .item__image {
   background-image: url("../multimedia/img/gold/cheese-and-bacon2.jpg");
+  transition: all 1s;
+  -moz-transition: all 1s;
 }
 
 .item-pork:hover .item__image {
   background-image: url("../multimedia/img/gold/burger-sweetPork.jpg");
+  transition: all 1s;
+  -moz-transition: all 1s;
 }
 
 /*/// NOSOTROS ///*/
@@ -615,6 +624,7 @@ main {
 .contact__item .contact__link:hover {
   color: #f0be3b;
   transition: all 0.3s;
+  -moz-transition: all 0.3s;
 }
 .contact__item .contact__icon {
   font-size: 2rem;
@@ -696,6 +706,7 @@ form {
     background-repeat: no-repeat;
     background-size: 0% 2px;
     transition: background-size 0.3s;
+    -moz-transition: background-size 0.3s;
   }
   .pageTitle:hover, .pageTitle:focus {
     background-size: 100% 2px;
@@ -796,10 +807,12 @@ form {
   .categories__li:hover .categories__img {
     transform: scale(0.9);
     transition: 0.3s;
+    -moz-transition: 0.3s;
   }
   .categories__li:hover .categories__title {
     transform: scale(1.1);
     transition: 0.3s;
+    -moz-transition: 0.3s;
     color: #fefbf9;
   }
 

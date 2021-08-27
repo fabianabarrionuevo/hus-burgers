@@ -161,6 +161,7 @@ a{
   &:hover {
     color: $baseColor-red;
     transition: 0.5s;
+    -moz-transition: 0.5s;
   }
 }
 
@@ -428,6 +429,7 @@ main {
           }
           .comprar {
             width: fit-content;
+            width: max-content;
             padding: 1px 55px;
             text-transform: capitalize;
             margin-top: 5px;
@@ -467,7 +469,6 @@ $productImageHover: (
       background-image: url($value);
       background-repeat: no-repeat;
       background-size: contain;
-      transition: all 1s;
     }
   }
 }
@@ -476,6 +477,8 @@ $productImageHover: (
   .item-#{$name}:hover {
     .item__image {
       background-image: url($value);
+      transition: all 1s;
+      -moz-transition: all 1s;
     }
   }
 }
@@ -590,6 +593,7 @@ $productImageHover: (
     &:hover {
       color: $baseColor-yellow;
       transition: all 0.3s;
+      -moz-transition: all 0.3s;
     }
   }
   .contact__icon {
@@ -677,6 +681,7 @@ form {
     background-repeat: no-repeat;
     background-size: 0% 2px;
     transition: background-size .3s;
+    -moz-transition: background-size .3s;
     &:hover, &:focus {
       background-size: 100% 2px;
     }
@@ -785,10 +790,12 @@ form {
     .categories__img {
       transform: scale(0.9);
       transition: 0.3s;
+      -moz-transition: 0.3s;
     }
     .categories__title {
       transform: scale(1.1);
       transition: 0.3s;
+      -moz-transition: 0.3s;
       color: $baseColor-white;
     }
   }
