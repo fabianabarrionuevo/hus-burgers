@@ -294,6 +294,10 @@ a {
   text-decoration: underline;
 }
 
+.animate__animated.animate__fadeInLeft {
+  --animate-duration: 2s;
+}
+
 /* MAIN SECTIONS */
 main {
   width: 90%;

@@ -314,6 +314,9 @@ $carouselImage: (
     }
   }
 }
+.animate__animated.animate__fadeInLeft {
+  --animate-duration: 2s;
+}
 
 /* MAIN SECTIONS */
 main {
