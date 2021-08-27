@@ -107,7 +107,7 @@ a {
 .title {
   height: auto;
   width: 100%;
-  padding: 5px 0px 2px;
+  margin: 0.8rem 0;
 }
 .title h1 {
   color: #fefbf9;
@@ -225,6 +225,10 @@ a {
 
 /*/// HOME ///*/
 /* carousel */
+.carousel-section {
+  margin-top: 0.7rem;
+}
+
 .carousel-item {
   width: 100%;
   height: 310px;
