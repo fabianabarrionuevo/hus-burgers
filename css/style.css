@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
 * {
   margin: 0;
@@ -41,10 +40,6 @@ a {
 }
 
 /**** HEADER ****/
-header {
-  height: 20vh;
-}
-
 /* daatos de contacto navbar*/
 .contact-nav {
   background-color: #ea3048;
@@ -97,7 +92,7 @@ header {
   height: 100px;
   padding: 0;
   position: sticky;
-  top: 0px;
+  top: -1px;
   z-index: 101;
 }
 
@@ -171,26 +166,27 @@ header {
   font-weight: 900;
 }
 
+/* Boton para volver al home en mobile*/
+.title-btn {
+  display: flex;
+  align-items: center;
+}
+.title-btn i {
+  font-size: 1.5rem;
+  color: #ea3048;
+}
+
 /* titulos principales de cada pagina */
 .pageTitle {
   color: #f0be3b;
   font-weight: 600;
   font-size: 1.8rem;
-  text-transform: capitalize;
   letter-spacing: 0.1rem;
   text-align: center;
-  margin: 20px auto;
-  width: fit-content;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 2px;
-  transition: background-size 0.3s;
-}
-.pageTitle:hover, .pageTitle:focus {
-  background-size: 100% 2px;
+  margin: 10px auto 20px;
 }
 
+/* Boton para volver al home en mobile*/
 /**** FOOTER ****/
 .footer {
   background-color: #f0be3b;
@@ -227,18 +223,10 @@ header {
 }
 
 /*/// HOME ///*/
-.home-container {
-  height: 70vh;
-}
-
 /* carousel */
-.carousel-section {
-  margin: 1rem 0;
-}
-
 .carousel-item {
   width: 100%;
-  height: 350px;
+  height: 310px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -256,12 +244,11 @@ header {
   background-image: url("../multimedia/img/carousel/peter-dawn-sxZ_Ca6MkWM-unsplash.jpg");
 }
 
-@media (max-width: 600px) {
-  .carousel-item {
-    height: 280px;
-  }
-}
 /* categorias de productos */
+.categories h2 {
+  color: #fefbf9;
+}
+
 .categories__list {
   display: flex;
   justify-content: space-around;
@@ -279,43 +266,32 @@ header {
   color: #fefbf9;
 }
 
-/* seccion de productos y más*/
-.sectionContent {
+.homeSection {
   width: 90%;
   margin: 50px auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-column-gap: 15px;
-  grid-row-gap: 35px;
-  justify-content: center;
 }
 
-.item {
-  display: inline-block;
-  min-width: 250px;
-  min-height: 250px;
-  max-width: 270px;
-  max-height: 315px;
-  box-shadow: 8px 10px 15px 2px #000;
-  justify-self: center;
+.step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  min-height: 6.5rem;
+  font-size: 1.2rem;
 }
-.item:hover {
-  box-shadow: 8px 10px 15px 9px #000;
+.step .step-icon {
+  width: 70px;
+  height: 70px;
 }
-.item:hover .item__link {
-  color: #fefbf9;
+.step .step-title {
+  color: #f0be3b;
+  font-weight: 900;
 }
-.item .item__img {
-  width: 17rem;
-  z-index: 1;
+.step .step-text {
+  padding: 1rem;
 }
-.item .item__title {
-  text-align: center;
-  text-transform: capitalize;
-  padding: 8px 0px;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.05rem;
+.step .step-text .step-link {
+  color: #f0be3b;
+  text-decoration: underline;
 }
 
 /* MAIN SECTIONS */
@@ -347,6 +323,22 @@ main {
 }
 .nav-tabs .nav-item {
   padding: 2px;
+}
+
+.item {
+  display: inline-block;
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 270px;
+  max-height: 315px;
+  box-shadow: 8px 10px 15px 2px #000;
+  justify-self: center;
+}
+.item:hover {
+  box-shadow: 8px 10px 15px 9px #000;
+}
+.item:hover .item__link {
+  color: #fefbf9;
 }
 
 .productCategory {
@@ -558,6 +550,14 @@ main {
   text-align: center;
   margin: 20px auto;
 }
+.contactOrder .contact__list {
+  justify-content: center;
+  margin-top: 2rem;
+}
+.contactOrder .contact__list .contact__item {
+  margin: 0.5rem;
+  width: 10rem;
+}
 
 /* comercios amigos*/
 .friendShop {
@@ -571,10 +571,18 @@ main {
 .friendShop .shop {
   display: inline-block;
   text-align: center;
-  margin: 25px;
+  margin: 25px 10px;
+  width: 250px;
+  max-width: 280px;
+}
+.friendShop .shop .shop-img {
+  width: 200px;
 }
 .friendShop .shop .shop-title {
-  text-transform: capitalize;
+  padding: 0.8rem 0;
+}
+.friendShop .shop p {
+  display: inline;
 }
 .friendShop .shop a {
   color: #fefbf9;
@@ -677,6 +685,18 @@ form {
     font-size: 3.5rem;
   }
 
+  .pageTitle {
+    width: max-content;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.3s;
+  }
+  .pageTitle:hover, .pageTitle:focus {
+    background-size: 100% 2px;
+  }
+
   .contact-nav__text {
     display: block;
   }
@@ -689,28 +709,16 @@ form {
     height: 105px;
   }
 
-  .home-container {
-    height: 80vh;
-  }
-
-  .sectionContent {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .categories__title {
     font-size: 1rem;
   }
 
-  .footer {
-    padding: 20px 0;
+  .homeSection {
+    width: 70%;
   }
 
-  .container-text .page-error-icon {
-    font-size: 5rem;
-  }
-  .container-text .page-error-icon .fa-sad-tear {
-    padding: 1%;
-    font-size: 4.4rem;
+  .footer {
+    padding: 20px 0;
   }
 
   .productCategory {
@@ -735,6 +743,18 @@ form {
   .nosotros .somos-hus {
     display: flex;
   }
+
+  .friendShop .shop {
+    margin: 25px 20px;
+  }
+
+  .container-text .page-error-icon {
+    font-size: 5rem;
+  }
+  .container-text .page-error-icon .fa-sad-tear {
+    padding: 1%;
+    font-size: 4.4rem;
+  }
 }
 @media only screen and (min-width: 992px) {
   .logoNav {
@@ -748,6 +768,14 @@ form {
 
   .container-fluid {
     flex-direction: column;
+  }
+
+  .title-btn i {
+    display: none;
+  }
+
+  .step {
+    margin: 0.5rem 5rem;
   }
 
   .categories {
@@ -771,10 +799,6 @@ form {
     color: #fefbf9;
   }
 
-  .sectionContent {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   main {
     margin: 3rem auto;
   }
@@ -788,6 +812,10 @@ form {
   }
   .productCategory article .description p {
     padding: 5px 0px;
+  }
+
+  .friendShop .shop {
+    margin: 25px;
   }
 }
 @media only screen and (min-width: 1200px) {

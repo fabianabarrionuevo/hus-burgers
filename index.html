@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- fav icon-->
   <link rel="shortcut icon" href="./multimedia/img/logoHus.jpg" type="image/x-icon">
+  <!-- link Animate-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <title>HUS | Hamburguesas gourmet</title>
 </head>
 <body>
@@ -70,9 +72,9 @@
         </div>
       </div>
     </nav>
+
   <!-- Contenido principal de la pagina -->
-  <div class="home-container">
-    <section class="carousel-section"> <!-- seccion de imagenes principales -->
+    <section class="carousel-section">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -97,6 +99,7 @@
 
     <!-- links categorias de productos -->
     <section class="categories">
+      <h2 class="animate__animated animate__flash pageTitle">Variedades</h2>
       <ul class="categories__list">
         <li class="categories__li">
           <a class="categories__link" href="pages/productos.html#tradicional">
@@ -124,46 +127,42 @@
         </li>
       </ul>
     </section>
-  </div>
 
     <!-- imagenes de distintos contenidos -->
-    <section class="sectionContent">
-      <article class="item item1">
-        <a class="item__link" href="pages/404-not-found.html">
-          <img class="item__img" src="multimedia/img/elaboradas-artesanalmente.jpg" alt="produccion artesanal">
-          <h4 class="item__title">hechas especialmente para vos</h4>
-        </a>
+    <section class="homeSection">
+      <h2 class="pageTitle">Disfrutá tus HUS en 4 simples pasos</h2>
+      <article class="step">
+        <img class="step-icon" src="./multimedia/img/1.png" alt="">
+        <div class="step-text">
+          <a href="pages/productos.html"><h4 class="step-title">Elegí tus hus</h4></a>
+          <p>Tenemos 7 variedades distintas para vos! <br> Mirá todas <a class="step-link" href="pages/productos.html">acá</a>.</p>
+        </div>
       </article>
-      <article class="item item2">
-        <a class="item__link" href="pages/productos.html">
-          <img class="item__img" src="multimedia/img/medallones-congelados.jpg" alt="medallones congelados">
-          <h4 class="item__title">siempre listos con unas HUS</h4>
-        </a>
+      <article class="step">
+        <img class="step-icon" src="./multimedia/img/2.png" alt="">
+        <div class="step-text">
+          <a href="pages/donde-estamos.html"><h4 class="step-title">Retirá o te las llevamos</h4></a>
+          <p><a class="step-link" href="pages/donde-estamos.html">Encarganos</a> y te llevamos a donde estés! <br>
+          También podes comprar en <a class="step-link" href="pages/donde-estamos.html">locales amigos</a>, encontrá el que te quede más cerca.</p>
+        </div>
       </article>
-      <article class="item item3">
-        <a class="item__link" href="pages/productos.html">
-          <img class="item__img" src="multimedia/img/3-lineas-de-burgers.jpg" alt="3 lineas de burgers">
-          <h4 class="item__title">para todos los gustos</h4>
-        </a>
+      <article class="step">
+        <img class="step-icon" src="./multimedia/img/3.png" alt="">
+        <div class="step-text">
+          <a href="#"><h4 class="step-title">Cociná</h4></a>
+          <p>Hace tus burgers a la plancha, en el horno o a la parrilla.</p>
+        </div>
       </article>
-      <article class="item item4">
-        <a class="item__link" href="pages/productos.html">
-          <img class="item__img" src="multimedia/img/preparalas-como-gustes.jpg" alt="preparacion">
-          <h4 class="item__title">preparalas como quieras</h4>
-        </a>
+      <article class="step">
+        <img class="step-icon" src="./multimedia/img/4.png" alt="">
+        <div class="step-text">
+          <a href="#"><h4 class="step-title">Comé</h4></a>
+          <p>Preparalas y acompañalas como más te guste.</p>
+        </div>
       </article>
-      <article class="item item5">
-        <a class="item__link" href="pages/productos.html">
-          <img class="item__img" src="multimedia/img/variedades.jpg" alt="variedades: pollo,cerdo y vaca">
-          <h4 class="item__title">tres variedades</h4>
-        </a>
-      </article>
-      <article class="item item6">
-        <a class="item__link" href="pages/productos.html">
-          <img class="item__img" src="multimedia/img/gold/nuestra-linea-gold.jpg" alt="nuestra linea gold,variedaes">
-          <h4 class="item__title">sabores irresistibles...</h4>
-        </a>
-      </article>
+
+      
+      
     </section> 
   
   <!-- PIE DE PAGINA -->
