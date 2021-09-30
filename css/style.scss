@@ -400,6 +400,7 @@ main {
         padding: 0px 2% 10px;
         position: relative;
         margin-top: -14px;
+        text-align: center;
         h4 {
           text-transform: capitalize;
           font-weight: bold;
@@ -427,6 +428,12 @@ main {
               border-radius: 5px;
               background-color: $baseColor-yellow;
               color: $baseColor-black;
+              &:hover {
+                background-color: darken($baseColor-yellow, 5%);
+                color: $baseColor-white;
+                font-weight: 600;
+                transition: all 0.2s;
+              }
             }
             span {
               padding: 0 3px;
@@ -437,6 +444,12 @@ main {
               padding: 1px 55px;
               text-transform: capitalize;
               margin-top: 5px;
+              &:hover {
+                background-color: darken($baseColor-yellow, 5%);
+                color: $baseColor-white;
+                font-weight: 600;
+                transition: all 0.2s;
+              }
             }
           }
         }

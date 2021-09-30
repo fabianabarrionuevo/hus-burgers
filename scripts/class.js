@@ -1,10 +1,9 @@
 class Product {
-  constructor(burgerName, category, classBurger, description, img, price, stock){
+  constructor(burgerName, category, classBurger, description, price, stock){
     this.burgerName = burgerName;
     this.category = category;
     this.classBurger = classBurger;
     this.description = description;
-    this.img = img;
     this.price = parseFloat(price);
     this.stock = parseInt(stock);
   }
@@ -25,5 +24,6 @@ const burgerParmesano = new Product("Parmesano", "Gold", "gold-parmesano", "Meda
 const burgerChedar = new Product("Cheese & Bacon", "Gold", "gold-bacon","Medallón de carne vacuna con una perfecta combinación de queso cheddar y panceta. Ideal para aquellos que buscan encontrar todos los sabores en una sola hamburguesa.","160", "50");
 const burgerBrasas = new Product("A las Brasas", "Gold", "gold-brasas","Medallón elaborado con carne vacuna que genera la sensación de comer una hamburguesa recién sacada de la parrilla, un sabor que sólo esta hamburguesa puede alcanzar.","160", "50");
 const burgerSweetPork = new Product("Sweet Pork", "Gold", "gold-pork","Medallón elaborado con pulpa de cerdo combinado con la cantidad justo de  manzana roja. Ideal para aquellas personas que buscan el sabor agridulce en las comidas.", "160", "50")
+
 
 

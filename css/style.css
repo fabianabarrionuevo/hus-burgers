@@ -378,6 +378,7 @@ main {
   padding: 0px 2% 10px;
   position: relative;
   margin-top: -14px;
+  text-align: center;
 }
 .main-container article .description h4 {
   text-transform: capitalize;
@@ -409,6 +410,12 @@ main {
   background-color: #f0be3b;
   color: #151719;
 }
+.main-container article .description .button-list .button-item button:hover {
+  background-color: #eeb623;
+  color: #fefbf9;
+  font-weight: 600;
+  transition: all 0.2s;
+}
 .main-container article .description .button-list .button-item span {
   padding: 0 3px;
 }
@@ -418,6 +425,12 @@ main {
   padding: 1px 55px;
   text-transform: capitalize;
   margin-top: 5px;
+}
+.main-container article .description .button-list .button-item .comprar:hover {
+  background-color: #eeb623;
+  color: #fefbf9;
+  font-weight: 600;
+  transition: all 0.2s;
 }
 
 /* List / Maps of products images */

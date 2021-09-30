@@ -14,8 +14,12 @@ function displayBurgerOptions(burgers) {
         <hr>
         <p>${item.description}</p>
         <ul class="button-list">
-          <li class="button-item">Pack de 240 g. <span>$ 80</span><button>-</button><span>1</span><button>+</button></li>
-          <li class="button-item">Pack de 360 g. <span>$ 80</span><button>-</button><span>1</span><button>+</button></li>
+          <li class="button-item">Pack de 240 g. <span>$${item.price}</span><br>
+            <button class="menos">-</button><span>1</span><button class="mas">+</button>
+          </li>
+          <li class="button-item">Pack de 360 g. <span>$${item.price}</span><br>
+            <button class="menos">-</button><span>1</span><button class="mas">+</button>
+          </li>
           <li class="button-item"><button class="comprar">comprar</button></li>
         </ul>
       </div>
@@ -25,4 +29,5 @@ function displayBurgerOptions(burgers) {
   productContainer.innerHTML = displayBurgers;
 }
 
-
+let buttonMas = document.getElementsByClassName('mas');
+console.log(buttonMas);
