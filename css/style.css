@@ -350,25 +350,25 @@ main {
   color: #fefbf9;
 }
 
-.productCategory {
-  background-color: transparent;
-  text-align: center;
-  margin: 20px 0;
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
 }
-.productCategory article {
+.main-container article {
   display: grid;
   padding: 10px;
   align-content: start;
 }
-.productCategory article .item {
+.main-container article .item {
   max-width: 270px;
   max-height: 270px;
 }
-.productCategory article .item .item__image {
+.main-container article .item .item__image {
   height: 270px;
   width: 270px;
 }
-.productCategory article .description {
+.main-container article .description {
   background-color: #151719;
   box-shadow: 8px 10px 15px 2px #000;
   border-radius: 10px;
@@ -379,29 +379,29 @@ main {
   position: relative;
   margin-top: -14px;
 }
-.productCategory article .description h4 {
+.main-container article .description h4 {
   text-transform: capitalize;
   font-weight: bold;
   padding: 1rem 0;
 }
-.productCategory article .description hr {
+.main-container article .description hr {
   width: 230px;
   margin: auto;
   color: #fefbf9;
   background-color: #fefbf9;
   opacity: 0.5;
 }
-.productCategory article .description p {
+.main-container article .description p {
   letter-spacing: 0.1rem;
   margin-top: 8px;
 }
-.productCategory article .description .button-list {
+.main-container article .description .button-list {
   margin: 15px 0;
 }
-.productCategory article .description .button-list .button-item {
+.main-container article .description .button-list .button-item {
   margin: 5px;
 }
-.productCategory article .description .button-list .button-item button {
+.main-container article .description .button-list .button-item button {
   width: 1.5rem;
   margin: 0 5px;
   border: transparent;
@@ -409,10 +409,10 @@ main {
   background-color: #f0be3b;
   color: #151719;
 }
-.productCategory article .description .button-list .button-item span {
+.main-container article .description .button-list .button-item span {
   padding: 0 3px;
 }
-.productCategory article .description .button-list .button-item .comprar {
+.main-container article .description .button-list .button-item .comprar {
   width: fit-content;
   width: max-content;
   padding: 1px 55px;
@@ -427,37 +427,37 @@ main {
   background-size: contain;
 }
 
-.item-bajoCero1 .item__image {
+.item-bajoCero-carne .item__image {
   background-image: url("../multimedia/img/bajo cero/bajo cero-100 carne vacuna.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.item-bajoCero2 .item__image {
+.item-bajoCero-pollo .item__image {
   background-image: url("../multimedia/img/bajo cero/bajo cero-100 pechuga.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.item-parmesano .item__image {
+.item-gold-parmesano .item__image {
   background-image: url("../multimedia/img/gold/gold-parmesano.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.item-brasas .item__image {
+.item-gold-brasas .item__image {
   background-image: url("../multimedia/img/gold/gold-a las brasas.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.item-bacon .item__image {
+.item-gold-bacon .item__image {
   background-image: url("../multimedia/img/gold/gold-cheese & bacon.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.item-pork .item__image {
+.item-gold-pork .item__image {
   background-image: url("../multimedia/img/gold/gold-sweet pork.jpg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -469,37 +469,37 @@ main {
   -moz-transition: all 1s;
 }
 
-.item-bajoCero1:hover .item__image {
+.item-bajoCero-carne:hover .item__image {
   background-image: url("../multimedia/img/bajo cero/bajoCeroCarne.jpg");
   transition: all 1s;
   -moz-transition: all 1s;
 }
 
-.item-bajoCero2:hover .item__image {
+.item-bajoCero-pollo:hover .item__image {
   background-image: url("../multimedia/img/bajo cero/bajoCeroPollo.jpg");
   transition: all 1s;
   -moz-transition: all 1s;
 }
 
-.item-parmesano:hover .item__image {
+.item-gold-parmesano:hover .item__image {
   background-image: url("../multimedia/img/gold/burger-parmesano.jpg");
   transition: all 1s;
   -moz-transition: all 1s;
 }
 
-.item-brasas:hover .item__image {
+.item-gold-brasas:hover .item__image {
   background-image: url("../multimedia/img/gold/burger-brasas.jpg");
   transition: all 1s;
   -moz-transition: all 1s;
 }
 
-.item-bacon:hover .item__image {
+.item-gold-bacon:hover .item__image {
   background-image: url("../multimedia/img/gold/cheese-and-bacon2.jpg");
   transition: all 1s;
   -moz-transition: all 1s;
 }
 
-.item-pork:hover .item__image {
+.item-gold-pork:hover .item__image {
   background-image: url("../multimedia/img/gold/burger-sweetPork.jpg");
   transition: all 1s;
   -moz-transition: all 1s;
@@ -725,7 +725,7 @@ form {
   }
 
   .headerNav {
-    height: 105px;
+    height: 125px;
   }
 
   .categories__title {
@@ -740,22 +740,22 @@ form {
     padding: 20px 0;
   }
 
-  .productCategory {
+  .main-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .productCategory article {
+  .main-container article {
     padding: 10px;
   }
-  .productCategory article .item {
+  .main-container article .item {
     max-width: 350px;
     max-height: 350px;
   }
-  .productCategory article .item .item__image {
+  .main-container article .item .item__image {
     height: 280px;
     width: 280px;
   }
-  .productCategory article .description {
+  .main-container article .description {
     width: 260px;
   }
 
@@ -824,14 +824,14 @@ form {
     margin: 3rem auto;
   }
 
-  .productCategory {
+  .main-container {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
   }
-  .productCategory article .description {
+  .main-container article .description {
     padding: 0px 5%;
   }
-  .productCategory article .description p {
+  .main-container article .description p {
     padding: 5px 0px;
   }
 
@@ -840,7 +840,7 @@ form {
   }
 }
 @media only screen and (min-width: 1200px) {
-  .productCategory {
+  .main-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

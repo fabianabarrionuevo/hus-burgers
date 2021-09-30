@@ -374,97 +374,98 @@ main {
   }
 }
 
-.productCategory {
-  background-color: transparent;
-  text-align: center;
-  margin: 20px 0;
-  article {
+  .main-container {
     display: grid;
-    padding: 10px;
-    align-content: start;
-    .item {
-      max-width: 270px;
-      max-height: 270px;
-      .item__image {
-        height: 270px;
-        width: 270px;
-      }
-    }
-    .description {
-      background-color: $baseColor-black;
-      box-shadow: 8px 10px 15px 2px #000;
-      border-radius: 10px;
-      justify-self: center;
-      align-self: start;
-      width: 255px;
-      padding: 0px 2% 10px;
-      position: relative;
-      margin-top: -14px;
-      h4 {
-        text-transform: capitalize;
-        font-weight: bold;
-        padding: 1rem 0;
-      }
-      hr {
-        width: 230px;
-        margin: auto;
-        color: $baseColor-white;
-        background-color: $baseColor-white;
-        opacity: 0.5;
-      }
-      p {
-        letter-spacing: 0.1rem;
-        margin-top: 8px;
-      }
-      .button-list {
-        margin: 15px 0;
-        .button-item {
-          margin: 5px;
-          button {
-            width: 1.5rem;
-            margin: 0 5px;
-            border: transparent;
-            border-radius: 5px;
-            background-color: $baseColor-yellow;
-            color: $baseColor-black;
-          }
-          span {
-            padding: 0 3px;
-          }
-          .comprar {
-            width: fit-content;
-            width: max-content;
-            padding: 1px 55px;
-            text-transform: capitalize;
-            margin-top: 5px;
-          }
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    article {
+      display: grid;
+      padding: 10px;
+      align-content: start;
+      .item {
+        max-width: 270px;
+        max-height: 270px;
+        .item__image {
+          height: 270px;
+          width: 270px;
         }
       }
-      
+      .description {
+        background-color: $baseColor-black;
+        box-shadow: 8px 10px 15px 2px #000;
+        border-radius: 10px;
+        justify-self: center;
+        align-self: start;
+        width: 255px;
+        padding: 0px 2% 10px;
+        position: relative;
+        margin-top: -14px;
+        h4 {
+          text-transform: capitalize;
+          font-weight: bold;
+          padding: 1rem 0;
+        }
+        hr {
+          width: 230px;
+          margin: auto;
+          color: $baseColor-white;
+          background-color: $baseColor-white;
+          opacity: 0.5;
+        }
+        p {
+          letter-spacing: 0.1rem;
+          margin-top: 8px;
+        }
+        .button-list {
+          margin: 15px 0;
+          .button-item {
+            margin: 5px;
+            button {
+              width: 1.5rem;
+              margin: 0 5px;
+              border: transparent;
+              border-radius: 5px;
+              background-color: $baseColor-yellow;
+              color: $baseColor-black;
+            }
+            span {
+              padding: 0 3px;
+            }
+            .comprar {
+              width: fit-content;
+              width: max-content;
+              padding: 1px 55px;
+              text-transform: capitalize;
+              margin-top: 5px;
+            }
+          }
+        }
+        
+      }
     }
   }
-}
+
 
 /* List / Maps of products images */
 
 $productImage: (
   tradicional: '../multimedia/img/tradicional/tradicional-carne\ vacuna.jpg',
-  bajoCero1: '../multimedia/img/bajo cero/bajo\ cero-100\ carne\ vacuna.jpg',
-  bajoCero2: '../multimedia/img/bajo cero/bajo\ cero-100\ pechuga.jpg',
-  parmesano: '../multimedia/img/gold/gold-parmesano.jpg',
-  brasas: '../multimedia/img/gold/gold-a las brasas.jpg',
-  bacon: '../multimedia/img/gold/gold-cheese & bacon.jpg',
-  pork: '../multimedia/img/gold/gold-sweet pork.jpg'
+  bajoCero-carne: '../multimedia/img/bajo cero/bajo\ cero-100\ carne\ vacuna.jpg',
+  bajoCero-pollo: '../multimedia/img/bajo cero/bajo\ cero-100\ pechuga.jpg',
+  gold-parmesano: '../multimedia/img/gold/gold-parmesano.jpg',
+  gold-brasas: '../multimedia/img/gold/gold-a las brasas.jpg',
+  gold-bacon: '../multimedia/img/gold/gold-cheese & bacon.jpg',
+  gold-pork: '../multimedia/img/gold/gold-sweet pork.jpg'
 );
 
 $productImageHover: (
   tradicional: '../multimedia/img/tradicional/recuadro-tradicional\ 2.jpg',
-  bajoCero1: '../multimedia/img/bajo cero/bajoCeroCarne.jpg',
-  bajoCero2: '../multimedia/img/bajo cero/bajoCeroPollo.jpg',
-  parmesano: '../multimedia/img/gold/burger-parmesano.jpg',
-  brasas: '../multimedia/img/gold/burger-brasas.jpg',
-  bacon: '../multimedia/img/gold/cheese-and-bacon2.jpg',
-  pork: '../multimedia/img/gold/burger-sweetPork.jpg'
+  bajoCero-carne: '../multimedia/img/bajo cero/bajoCeroCarne.jpg',
+  bajoCero-pollo: '../multimedia/img/bajo cero/bajoCeroPollo.jpg',
+  gold-parmesano: '../multimedia/img/gold/burger-parmesano.jpg',
+  gold-brasas: '../multimedia/img/gold/burger-brasas.jpg',
+  gold-bacon: '../multimedia/img/gold/cheese-and-bacon2.jpg',
+  gold-pork: '../multimedia/img/gold/burger-sweetPork.jpg'
 );
 
 @each $name, $value in $productImage {
@@ -699,7 +700,7 @@ form {
   }
 
   .headerNav {
-    height: 105px;
+    height: 125px;
   }
 
   .categories__title {
@@ -714,7 +715,7 @@ form {
     padding: 20px 0;
   }
  
-  .productCategory {
+  .main-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     article {
@@ -808,7 +809,7 @@ form {
     margin: 3rem auto;
   }
 
-  .productCategory {
+  .main-container {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
     article {
@@ -830,7 +831,7 @@ form {
 }
 
 @media only screen and (min-width: 1200px) {
-  .productCategory {
+  .main-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     
   }
