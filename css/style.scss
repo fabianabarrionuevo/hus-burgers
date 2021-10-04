@@ -333,29 +333,29 @@ main {
 /*/// PRODUCTOS ///*/
 
 /* nabvar bootstrap */
-.nav-tabs {
+.products-categories {
   border-bottom: 1px solid $baseColor-yellow;
-
-  .nav-link {
+  .filter-btn {
     color: $baseColor-black;
     background-color: $baseColor-yellow;
     border-color: $baseColor-yellow;
     box-shadow: 10px 10px 10px $baseColor-black;
     padding: 0.4rem;
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 0;
-      &::first-letter {
-        text-transform: uppercase;
-      }
+    border-bottom-right-radius: 20%;
+    border-top-left-radius: 20%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    &:hover{
+      border-bottom-right-radius: 0%;
+      border-top-left-radius: 0%;
+      border-top-right-radius: 20%;
+      border-bottom-left-radius: 20%;
     }
   }
-  .nav-item {
-    padding: 2px;
-  }
-  
 }
 
 .item {
