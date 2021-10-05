@@ -17,6 +17,7 @@ class Product {
   }
 }
 
+
 const burgerTradicional = new Product("Medallon Tradicional", 
   "Tradicional", 
   "tradicional" , 
@@ -58,7 +59,6 @@ const burgerSweetPork = new Product("Sweet Pork",
   "gold-pork",
   "Medallón elaborado con pulpa de cerdo combinado con la cantidad justo de  manzana roja. Ideal para aquellas personas que buscan el sabor agridulce en las comidas.", 
   "160", 
-  "50")
-
-
-
+  "50");
+     
+   

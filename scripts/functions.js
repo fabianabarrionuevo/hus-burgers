@@ -71,3 +71,22 @@ function displayCategoriesButtons() {
   });
 
 }
+
+const shopsContainer = document.querySelector('.friendShop');
+
+function displayFriendShops(shops) {
+  let displayShops = shops.map(item =>{
+    console.log(item);
+    return `<article class="shop">
+    <a href=${item.googleLocation}>
+    <img class="shop-img" src=${item.image} alt="foto comercio ${item.shopName}">
+    <h4 class="shop-title">${item.shopName}</h4>
+      <i class="fas fa-map-marker-alt"></i>
+      <p>${item.address}</p>
+    </a>
+  </article>`;
+  
+  });
+  displayShops = displayShops.join('');
+  shopsContainer.innerHTML = displayShops;
+}
