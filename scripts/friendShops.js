@@ -129,7 +129,7 @@ function displayFriendShops(shops) {
   
   });
   displayShops = displayShops.join('');
-  shopsContainer.innerHTML = displayShops;
+  shopsContainer.innerHTML += displayShops;
 }
 
 displayFriendShops(shops);

@@ -458,6 +458,26 @@ main {
     }
   }
 
+  .cart-container {
+    background-color: $baseColor-black;
+    box-shadow: 8px 10px 15px 2px #000;
+    border-radius: 10px;
+    min-height: 350px;
+    padding: 1.5rem;
+    margin: 2rem;
+    p {
+      text-align: center;
+      position: relative;
+      bottom: 1px;
+    }
+    .cart {
+      padding: 1rem;
+    }
+    .resert-cart{
+      text-align: center;
+      background-color: $baseColor-red;
+    }
+  }
 
 /* List / Maps of products images */
 

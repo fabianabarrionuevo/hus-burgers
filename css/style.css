@@ -436,6 +436,27 @@ main {
   transition: all 0.2s;
 }
 
+.cart-container {
+  background-color: #151719;
+  box-shadow: 8px 10px 15px 2px #000;
+  border-radius: 10px;
+  min-height: 350px;
+  padding: 1.5rem;
+  margin: 2rem;
+}
+.cart-container p {
+  text-align: center;
+  position: relative;
+  bottom: 1px;
+}
+.cart-container .cart {
+  padding: 1rem;
+}
+.cart-container .resert-cart {
+  text-align: center;
+  background-color: #ea3048;
+}
+
 /* List / Maps of products images */
 .item-tradicional .item__image {
   background-image: url("../multimedia/img/tradicional/tradicional-carne vacuna.jpg");
