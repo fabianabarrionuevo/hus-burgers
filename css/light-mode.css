@@ -11,12 +11,12 @@ ul, p, h1, h4 {
 }
 
 body {
-  background-color: #151719;
+  background-color: #fefbf9;
   background-image: url("../multimedia/img/pat.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
-  color: #fefbf9;
+  color: #151719;
   font-family: "Lato", sans-serif;
 }
 
@@ -81,7 +81,7 @@ a {
 
 /* barra de navegacion*/
 .headerNav {
-  background-color: #151719;
+  background-color: #fefbf9;
   background-image: url(../multimedia/img/pat.svg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -110,7 +110,7 @@ a {
   margin: 0.8rem 0;
 }
 .title h1 {
-  color: #fefbf9;
+  color: #151719;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 3rem;
@@ -132,7 +132,7 @@ a {
   padding: 0;
   border: solid 2px;
   border-radius: 16px;
-  border-color: #fefbf9;
+  border-color: #151719;
   background-color: transparent;
   width: 60px;
   height: 32px;
@@ -148,10 +148,10 @@ a {
 .switch-theme-icon {
   width: 30px;
   height: 30px;
-  color: #151719;
-  background-color: #fefbf9;
-  outline: solid 5px #fefbf9;
-  box-shadow: 0 0 10px #fefbf9;
+  color: #fefbf9;
+  background-color: #151719;
+  outline: solid 5px #151719;
+  box-shadow: 0 0 10px #151719;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,14 +169,14 @@ a {
 
 .fa-bars {
   font-size: 2rem;
-  color: #fefbf9;
+  color: #151719;
   margin: 0;
 }
 
 .navbar-collapse {
   justify-content: center;
   z-index: 100;
-  background-color: #151719;
+  background-color: #fefbf9;
   background-image: url(../multimedia/img/pat.svg);
 }
 
@@ -185,7 +185,7 @@ a {
 }
 
 .nav-link {
-  color: #fefbf9;
+  color: #151719;
 }
 .nav-link:hover {
   color: #ea3048;
@@ -240,7 +240,7 @@ a {
   text-transform: capitalize;
 }
 .footer .footer-item .footer__list .footer__link:hover {
-  color: #fefbf9;
+  color: #151719;
 }
 
 .footer-icons__link {
@@ -282,7 +282,7 @@ a {
 
 /* categorias de productos */
 .categories h2 {
-  color: #fefbf9;
+  color: #151719;
 }
 
 .categories__list {
@@ -299,7 +299,7 @@ a {
   text-transform: capitalize;
   text-align: center;
   font-size: 0.9rem;
-  color: #fefbf9;
+  color: #151719;
 }
 
 .homeSection {
@@ -350,7 +350,7 @@ main {
   color: #151719;
   background-color: #f0be3b;
   border-color: #f0be3b;
-  box-shadow: 10px 10px 10px #151719;
+  box-shadow: 10px 10px 10px #fefbf9;
   padding: 0.4rem;
   border-bottom-right-radius: 20%;
   border-top-left-radius: 20%;
@@ -381,7 +381,7 @@ main {
   box-shadow: 8px 10px 15px 9px #000;
 }
 .item:hover .item__link {
-  color: #fefbf9;
+  color: #151719;
 }
 
 .main-container {
@@ -403,7 +403,7 @@ main {
   width: 270px;
 }
 .main-container article .description {
-  background-color: #151719;
+  background-color: #fefbf9;
   box-shadow: 8px 10px 15px 2px #000;
   border-radius: 10px;
   justify-self: center;
@@ -422,8 +422,8 @@ main {
 .main-container article .description hr {
   width: 230px;
   margin: auto;
-  color: #fefbf9;
-  background-color: #fefbf9;
+  color: #151719;
+  background-color: #151719;
   opacity: 0.5;
 }
 .main-container article .description p {
@@ -446,7 +446,7 @@ main {
 }
 .main-container article .description .button-list .button-item button:hover {
   background-color: #eeb623;
-  color: #fefbf9;
+  color: #151719;
   font-weight: 600;
   transition: all 0.2s;
 }
@@ -462,13 +462,13 @@ main {
 }
 .main-container article .description .button-list .button-item .comprar:hover {
   background-color: #eeb623;
-  color: #fefbf9;
+  color: #151719;
   font-weight: 600;
   transition: all 0.2s;
 }
 
 .cart-container {
-  background-color: #151719;
+  background-color: #fefbf9;
   box-shadow: 8px 10px 15px 2px #000;
   border-radius: 10px;
   min-height: 350px;
@@ -623,7 +623,7 @@ main {
   font-size: 2.3rem;
   line-height: 40px;
   overflow: hidden;
-  color: #fefbf9;
+  color: #151719;
   text-transform: uppercase;
 }
 .nosotros .somos-hus ul {
@@ -707,7 +707,7 @@ main {
   display: inline;
 }
 .friendShop .shop a {
-  color: #fefbf9;
+  color: #151719;
 }
 .friendShop .shop a:hover {
   color: #f0be3b;
@@ -729,6 +729,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin: 10px;
+  color: #151719;
 }
 .contact__item .contact__link:hover {
   color: #f0be3b;
@@ -922,7 +923,7 @@ form {
     transform: scale(1.1);
     transition: 0.3s;
     -moz-transition: 0.3s;
-    color: #fefbf9;
+    color: #151719;
   }
 
   main {
@@ -950,4 +951,4 @@ form {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=light-mode.css.map */

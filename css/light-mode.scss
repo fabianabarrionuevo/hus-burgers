@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
 @import "variables";
 
@@ -14,12 +13,12 @@ ul, p , h1, h4 {
 }
 
 body {
-  background-color: $baseColor-black;
+  background-color: $baseColor-white;
   background-image: url('../multimedia/img/pat.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
-  color: $baseColor-white;
+  color: $baseColor-black;
   font-family: $baseFont;
 }
 
@@ -84,7 +83,7 @@ a{
 
 /* barra de navegacion*/
 .headerNav {
-  background-color: $baseColor-black;
+  background-color: $baseColor-white;
   background-image: url(../multimedia/img/pat.svg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -113,7 +112,7 @@ a{
   margin: 0.8rem 0;
   $fontSize: 3rem;
   h1 {
-    color: $baseColor-white;
+    color: $baseColor-black;
     text-transform: uppercase;
     font-weight: 900;
     font-size: $fontSize;
@@ -136,7 +135,7 @@ a{
 	padding: 0;
 	border: solid 2px;
   border-radius: 16px;
-  border-color: $baseColor-white;
+  border-color: $baseColor-black;
 	background-color: transparent;
 	width: 60px;
 	height: 32px;
@@ -147,13 +146,14 @@ a{
 .switch-theme-button.light .switch-theme-icon {
 	transform: translateX(30px);
 }
+
 .switch-theme-icon {
 	width: 30px;
 	height: 30px;
-	color: $baseColor-black;
-  background-color: $baseColor-white;
-  outline: solid 5px $baseColor-white;
-	box-shadow: 0 0 10px $baseColor-white;
+	color: $baseColor-white;
+  background-color: $baseColor-black;
+  outline: solid 5px $baseColor-black;
+	box-shadow: 0 0 10px $baseColor-black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -171,14 +171,14 @@ a{
 
 .fa-bars {
   font-size: 2rem;
-  color: $baseColor-white;
+  color: $baseColor-black;
   margin: 0;
 }
 
 .navbar-collapse {
   justify-content: center;
   z-index: 100;
-  background-color: $baseColor-black;
+  background-color: $baseColor-white;
   background-image: url(../multimedia/img/pat.svg);
 }
 
@@ -187,7 +187,7 @@ a{
 }
 
 .nav-link {
-  color: $baseColor-white;
+  color: $baseColor-black;
   &:hover {
     color: $baseColor-red;
     transition: 0.5s;
@@ -239,17 +239,17 @@ a{
       @if ($bg-color == $baseColor-yellow){
         color: $baseColor-black;
         &:hover {
-          color: $baseColor-white;
+          color: $baseColor-black;
         }
       } @else if ($bg-color == $baseColor-black){
         color: $baseColor-yellow;
         &:hover {
-          color: $baseColor-white;
+          color: $baseColor-black;
         }
       } @else if ($bg-color == $baseColor-red) {
-        color: $baseColor-white;
+        color: $baseColor-black;
         &:hover {
-          color: $baseColor-black;
+          color: $baseColor-white;
         }
       } 
       text-transform: capitalize;
@@ -302,7 +302,7 @@ $carouselImage: (
 /* categorias de productos */
 .categories {
   h2 {
-    color: $baseColor-white;
+    color: $baseColor-black;
   }
 }
 .categories__list {
@@ -319,7 +319,7 @@ $carouselImage: (
   text-transform: capitalize;
   text-align: center;
   font-size: 0.9rem;
-  color: $baseColor-white;
+  color: $baseColor-black;
 }
 
 .homeSection {
@@ -369,7 +369,7 @@ main {
     color: $baseColor-black;
     background-color: $baseColor-yellow;
     border-color: $baseColor-yellow;
-    box-shadow: 10px 10px 10px $baseColor-black;
+    box-shadow: 10px 10px 10px $baseColor-white;
     padding: 0.4rem;
     border-bottom-right-radius: 20%;
     border-top-left-radius: 20%;
@@ -399,7 +399,7 @@ main {
   &:hover{
     box-shadow: 8px 10px 15px 9px #000;
     .item__link{
-      color: $baseColor-white;
+      color: $baseColor-black;
     }
   }
 }
@@ -421,7 +421,7 @@ main {
         }
       }
       .description {
-        background-color: $baseColor-black;
+        background-color: $baseColor-white;
         box-shadow: 8px 10px 15px 2px #000;
         border-radius: 10px;
         justify-self: center;
@@ -439,8 +439,8 @@ main {
         hr {
           width: 230px;
           margin: auto;
-          color: $baseColor-white;
-          background-color: $baseColor-white;
+          color: $baseColor-black;
+          background-color: $baseColor-black;
           opacity: 0.5;
         }
         p {
@@ -460,7 +460,7 @@ main {
               color: $baseColor-black;
               &:hover {
                 background-color: darken($baseColor-yellow, 5%);
-                color: $baseColor-white;
+                color: $baseColor-black;
                 font-weight: 600;
                 transition: all 0.2s;
               }
@@ -476,7 +476,7 @@ main {
               margin-top: 5px;
               &:hover {
                 background-color: darken($baseColor-yellow, 5%);
-                color: $baseColor-white;
+                color: $baseColor-black;
                 font-weight: 600;
                 transition: all 0.2s;
               }
@@ -489,7 +489,7 @@ main {
   }
 
   .cart-container {
-    background-color: $baseColor-black;
+    background-color: $baseColor-white;
     box-shadow: 8px 10px 15px 2px #000;
     border-radius: 10px;
     min-height: 350px;
@@ -603,7 +603,7 @@ $productImageHover: (
    font-size: 2.3rem;
    line-height: 40px;
    overflow: hidden;
-   color: $baseColor-white;
+   color: $baseColor-black;
    text-transform: uppercase;
    ul {
      padding-left: 0.5rem;
@@ -674,7 +674,7 @@ $productImageHover: (
       display: inline;
     }
     a {
-      color: $baseColor-white;
+      color: $baseColor-black;
       &:hover {
         color: $baseColor-yellow;
       }
@@ -698,6 +698,7 @@ $productImageHover: (
     flex-direction: column;
     align-items: center;
     margin: 10px;
+    color: $baseColor-black;
     &:hover {
       color: $baseColor-yellow;
       transition: all 0.3s;
@@ -904,7 +905,7 @@ form {
       transform: scale(1.1);
       transition: 0.3s;
       -moz-transition: 0.3s;
-      color: $baseColor-white;
+      color: $baseColor-black;
     }
   }
 

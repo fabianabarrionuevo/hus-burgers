@@ -1,7 +1,9 @@
 
 const productContainer = document.querySelector('.main-container');
+const buttonCategories = document.querySelector('.products-categories');
 const cartSection = document.querySelector('.cart-container');
 const cartCard = document.querySelector('.cart');
+
 
 //function that dynamically adds each burger item from the product array.
 function displayBurgerOptions(burgers) {
@@ -25,8 +27,6 @@ function displayBurgerOptions(burgers) {
   productContainer.innerHTML = displayBurgers;
 
 }
-
-const buttonCategories = document.querySelector('.products-categories');
 
 //function that dynamically adds buttons to filter product categories
 function displayCategoriesButtons() {
@@ -78,40 +78,19 @@ const inStock = (quantity, stock) => {
 }
 
 //function that adds products to cart
-const addToCart = (product, quantity) => {
-  const burgerSelected = burgerOptions.find(burger => burger.classBurger === product);
+const addToCart = (e) => {
+  e.preventDefault();
+  const classBurgerSelected = e.currentTarget.dataset.id;
+  const burgerSelected = burgerOptions.find(burger => burger.classBurger === classBurgerSelected);
+  let quantity = 1;
   if(inStock(quantity, burgerSelected.stock)){
-    console.log(burgerSelected.stock);
-    cart = localStorage.getItem('cart');
-
-    if(!cart){
-      cart = [];
-    } else {
-      cart = JSON.parse(cart);
-    }
-
-    let item = {
-      qty: quantity,
-      price: quantity * burgerSelected.price, 
-      burger: burgerSelected.burgerName
-    };
-
-      if(cart.some(elem => elem.burger == burgerSelected.burgerName)){
-        cart.find(elem => {
-          if(elem.burger == burgerSelected.burgerName){
-            elem.qty += 1;
-          }
-        });
-      } else {
-        cart.push(item);
-      }
-
-    cart = JSON.stringify(cart);
-    localStorage.setItem('cart', cart);
-    burgerSelected.stock -= item.qty;
+    addToLocalStorage(classBurgerSelected, burgerSelected.burgerName, burgerSelected.price, quantity);
+    burgerSelected.stock -= quantity;
   }
-
+  cart = getLocalStorage();
+  displayCart(cart);
 }
+
 //function that shows cart
 const displayCart = (cart) => {
   cart = localStorage.getItem('cart');
@@ -121,41 +100,85 @@ const displayCart = (cart) => {
     let message = document.createTextNode("Aún no agregaste nada al carrito");
     messageContainer.append(message);
     cartCard.append(messageContainer);
-    
   } else {
     let itemCart = cart.map(item => {
-      return `<li>${item.burger}, ${item.qty}: ${item.price * item.qty}</li>`;
+      return `<article class="cart-item" data-id="${item.id}">
+          <ul class="item-detail">
+            <li>${item.burger}</li>
+            <li>${item.qty}</li>
+            <li>$${item.price * item.qty}</li>
+          </ul>
+          <div class="btn-container">
+            <button type="button" class="edit-btn">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button type="button" class="delete-btn">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+          </article>`;
     });
     itemCart = itemCart.join('');
     cartCard.innerHTML = itemCart;
-
-    // let totalPurchase = cart.reduce((total, item) => {
-    //   return total += item.qty * item.price; 
-    // }, 0)
-
-    // let pTotal = document.createElement('p');
-    // let totalCart = document.createTextNode(`El total de su compra es ${totalPurchase}`);
-    // pTotal.append(totalCart);
-    // cartCard.append(pTotal);
-
-    // let resetButton = document.createElement('button');
-    // resetButton.classList.add('resert-cart');
-    // resetButton.innerHTML = "BORRAR";
-    // cartCard.append(resetButton);
+    const deleteBtn = document.querySelectorAll('.delete-btn');
+    // const editBtn = document.querySelectorAll('.edit-btn');
+    deleteBtn.forEach(btn => btn.addEventListener('click', deleteItem));
+    
   }
 }
-//function that shows total cart
-const displayTotal = (cart) => {
-  cart = localStorage.getItem('cart');
-  cart = JSON.parse(cart);
-  let totalPurchase = cart.reduce((total, item) => {
-    return total += item.qty * item.price; 
-  }, 0)
 
-  let pTotal = document.createElement('p');
-  let totalCart = document.createTextNode(`El total de su compra es ${totalPurchase}`);
-  pTotal.append(totalCart);
-  cartCard.append(pTotal);
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  const id = element.dataset.id;
+  cartCard.removeChild(element);
+  // remove from local storage
+  removeFromLocalStorage(id);
+}
+
+// **** LOCAL STORAGE ****
+// set Item
+function addToLocalStorage(id, burger, price, qty) {
+  let itemToadd = {id, burger, price, qty};
+  let items = getLocalStorage();
+  if(items.some(elem => elem.burger == itemToadd.burger)){
+    items.find(elem => {
+      if(elem.burger == itemToadd.burger){
+        elem.qty += 1;
+      }
+    });
+  } else {
+    items.push(itemToadd);
+  }
+  localStorage.setItem('cart', JSON.stringify(items));
+}
+
+// remove Item
+function removeFromLocalStorage(id){
+  let items = getLocalStorage();
+  items = items.filter(item => {
+    if(item.id !== id){
+      return item;
+    }
+  })
+  localStorage.setItem('cart', JSON.stringify(items));
+}
+// //edit item from localStorage
+// function editLocalStorage(id, value){
+//   let items = getLocalStorage();
+//   items = items.map(item => {
+//     if(item.id === id){
+//       item.value = value;
+//     }
+//     return item;
+//   });
+//   localStorage.setItem('list', JSON.stringify(items));
+// }
+
+// get Items 
+function getLocalStorage() {
+  return localStorage.getItem("cart")
+  ? JSON.parse(localStorage.getItem("cart"))
+  : [];
 }
 
 
