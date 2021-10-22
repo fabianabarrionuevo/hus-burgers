@@ -483,6 +483,7 @@ main {
 }
 .cart-container .cart {
   padding: 1rem;
+  min-height: 250px;
 }
 .cart-container .cart .cart-item {
   display: flex;
@@ -495,6 +496,9 @@ main {
 }
 .cart-container .cart .item-detail li {
   padding: 0 0.5rem;
+}
+.cart-container .cart .item-detail li:first-child {
+  min-width: 20rem;
 }
 .cart-container .cart .btn-container {
   align-self: center;
@@ -519,6 +523,25 @@ main {
 }
 .cart-container .cart .btn-container .delete-btn:hover {
   color: #db0000;
+}
+.cart-container .totalCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart-container .totalCart .dolar {
+  width: fit-content;
+  padding: 0 0.5rem;
+  border: transparent;
+  border-radius: 5px;
+  background-color: #f0be3b;
+  color: #151719;
+}
+.cart-container .totalCart .dolar:hover {
+  background-color: #eeb623;
+  color: #fefbf9;
+  font-weight: 600;
+  transition: all 0.2s;
 }
 .cart-container .resert-cart {
   text-align: center;

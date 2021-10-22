@@ -3,7 +3,10 @@ const productContainer = document.querySelector('.main-container');
 const buttonCategories = document.querySelector('.products-categories');
 const cartSection = document.querySelector('.cart-container');
 const cartCard = document.querySelector('.cart');
+const totalCartContainer = document.querySelector('.totalCart');
 
+// API a usar para la conversion a dolar
+const urlAPIdollar = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';
 
 //function that dynamically adds each burger item from the product array.
 function displayBurgerOptions(burgers) {
@@ -109,9 +112,6 @@ const displayCart = (cart) => {
             <li>$${item.price * item.qty}</li>
           </ul>
           <div class="btn-container">
-            <button type="button" class="edit-btn">
-              <i class="fas fa-edit"></i>
-            </button>
             <button type="button" class="delete-btn">
               <i class="fas fa-trash"></i>
             </button>
@@ -123,7 +123,30 @@ const displayCart = (cart) => {
     const deleteBtn = document.querySelectorAll('.delete-btn');
     // const editBtn = document.querySelectorAll('.edit-btn');
     deleteBtn.forEach(btn => btn.addEventListener('click', deleteItem));
-    
+
+    let totalCart = cart.reduce((total, item) => {
+      total += item.price * item.qty;
+      return total;
+    }, 0);
+
+    const totalPrice = `<p>El total de su compra es $${totalCart}</p>
+                        <button class="dolar">dolarizar</button>`;
+    totalCartContainer.innerHTML = totalPrice;
+
+    $(".dolar").click( () => {
+      let totalCart = cart.reduce((total, item) => {
+        total += item.price * item.qty;
+        return total;
+      }, 0);
+      $.get(urlAPIdollar, function (res, status) {
+        if(status === "success"){
+          //guardo el valor del dolar parseado 
+          const dollarOf = parseFloat(res[0].casa.venta);
+          $(".totalDolarText").text(`El total de su compra en dolares es $${Math.round((totalCart / dollarOf)*100)/100}`)
+        }
+      });
+    })
+  
   }
 }
 
@@ -133,6 +156,8 @@ function deleteItem(e) {
   cartCard.removeChild(element);
   // remove from local storage
   removeFromLocalStorage(id);
+  cart = getLocalStorage();
+  displayCart(cart);
 }
 
 // **** LOCAL STORAGE ****
@@ -180,5 +205,11 @@ function getLocalStorage() {
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
 }
+
+
+
+
+
+
 
 

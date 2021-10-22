@@ -468,7 +468,7 @@ main {
             span {
               padding: 0 3px;
             }
-            .comprar {
+            .comprar{
               width: fit-content;
               width: max-content;
               padding: 1px 55px;
@@ -503,6 +503,7 @@ main {
     }
     .cart {
       padding: 1rem;
+      min-height: 250px;
       .cart-item {
         display: flex;
         justify-content: center;
@@ -511,10 +512,15 @@ main {
         text-transform: capitalize;
         padding: 0 1rem;
         display: flex;
+        
         li {
           padding: 0 0.5rem;
+          &:first-child {
+            min-width: 20rem;
+          }
         }
       }
+      
       .btn-container {
         align-self: center;
         margin-left: 4rem;
@@ -540,6 +546,25 @@ main {
         
         .delete-btn:hover {
           color: rgb(219, 0, 0);
+        }
+      }
+    }
+    .totalCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      .dolar{
+        width: fit-content;
+        padding: 0 0.5rem;
+        border: transparent;
+        border-radius: 5px;
+        background-color: $baseColor-yellow;
+        color: $baseColor-black;
+        &:hover {
+          background-color: darken($baseColor-yellow, 5%);
+          color: $baseColor-white;
+          font-weight: 600;
+          transition: all 0.2s;
         }
       }
     }

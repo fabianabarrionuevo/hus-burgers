@@ -9,3 +9,4 @@ const btnComprar = document.querySelectorAll('.comprar');
     btn.addEventListener('click',addToCart);
   });
 
+ 
