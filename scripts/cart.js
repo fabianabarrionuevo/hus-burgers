@@ -2,11 +2,12 @@
 const productContainer = document.querySelector('.main-container');
 const buttonCategories = document.querySelector('.products-categories');
 const cartSection = document.querySelector('.cart-container');
-const cartCard = document.querySelector('.cart');
+const cartBody = document.querySelector('.tbody-cart');
+const cartFooter = document.querySelector('.tfooter-cart');
 const totalCartContainer = document.querySelector('.totalCart');
+const cartCounter = document.querySelector('.cart-counter');
 
-// API a usar para la conversion a dolar
-const urlAPIdollar = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales';
+
 
 //function that dynamically adds each burger item from the product array.
 function displayBurgerOptions(burgers) {
@@ -28,6 +29,11 @@ function displayBurgerOptions(burgers) {
   });
   displayBurgers = displayBurgers.join('');
   productContainer.innerHTML = displayBurgers;
+
+  const btnComprar = document.querySelectorAll('.comprar');
+  btnComprar.forEach(btn => {
+    btn.addEventListener('click',addToCart);
+  });
 
 }
 
@@ -89,73 +95,81 @@ const addToCart = (e) => {
   if(inStock(quantity, burgerSelected.stock)){
     addToLocalStorage(classBurgerSelected, burgerSelected.burgerName, burgerSelected.price, quantity);
     burgerSelected.stock -= quantity;
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: `${burgerSelected.burgerName} 
+      Producto agregado`,
+      showConfirmButton: false,
+      timer: 1000,
+      background: '#151719',
+      
+    });
   }
   cart = getLocalStorage();
   displayCart(cart);
 }
 
 //function that shows cart
-const displayCart = (cart) => {
-  cart = localStorage.getItem('cart');
-  cart = JSON.parse(cart);
+const displayCart = () => {
+  let cart = getLocalStorage();
+  showTotals(cart);
   if(!cart || cart.length <= 0){
     let messageContainer = document.createElement('p');
     let message = document.createTextNode("Aún no agregaste nada al carrito");
     messageContainer.append(message);
-    cartCard.append(messageContainer);
+    cartBody.append(messageContainer);
+    const totalPrice = ``;
+    cartFooter.innerHTML = totalPrice;
   } else {
     let itemCart = cart.map(item => {
-      return `<article class="cart-item" data-id="${item.id}">
-          <ul class="item-detail">
-            <li>${item.burger}</li>
-            <li>${item.qty}</li>
-            <li>$${item.price * item.qty}</li>
-          </ul>
-          <div class="btn-container">
-            <button type="button" class="delete-btn">
-              <i class="fas fa-trash"></i>
-            </button>
-          </div>
-          </article>`;
+      return `<tr>
+                <td class="td-name">${item.burger}</td>
+                <td class="td-qty">${item.qty}</td>
+                <td class="td-price">$${item.price}</td>
+                <td>
+                  <button type="button" class="delete-btn fas fa-trash" data-id="${item.id}">
+                  </button>
+                </td>
+              </tr>`;
     });
     itemCart = itemCart.join('');
-    cartCard.innerHTML = itemCart;
+    cartBody.innerHTML = itemCart;
     const deleteBtn = document.querySelectorAll('.delete-btn');
-    // const editBtn = document.querySelectorAll('.edit-btn');
-    deleteBtn.forEach(btn => btn.addEventListener('click', deleteItem));
-
-    let totalCart = cart.reduce((total, item) => {
-      total += item.price * item.qty;
-      return total;
-    }, 0);
-
-    const totalPrice = `<p>El total de su compra es $${totalCart}</p>
-                        <button class="dolar">dolarizar</button>`;
-    totalCartContainer.innerHTML = totalPrice;
-
-    $(".dolar").click( () => {
-      let totalCart = cart.reduce((total, item) => {
-        total += item.price * item.qty;
-        return total;
-      }, 0);
-      $.get(urlAPIdollar, function (res, status) {
-        if(status === "success"){
-          //guardo el valor del dolar parseado 
-          const dollarOf = parseFloat(res[0].casa.venta);
-          $(".totalDolarText").text(`El total de su compra en dolares es $${Math.round((totalCart / dollarOf)*100)/100}`)
-        }
-      });
-    })
-  
+    deleteBtn.forEach(btn => btn.addEventListener('click', (e) => deleteItem(e)));
   }
 }
 
+//function that shows total cart and total items
+const showTotals = (cart) => {
+  let totalCart = cart.reduce((total, item) => {
+    total += item.price * item.qty;
+    return total;
+  }, 0);
+
+  if(totalCart > 0){
+    const totalPrice = `<td colspan="3">El total de su compra es $${totalCart}</td>`;
+    cartFooter.innerHTML = totalPrice;
+  }
+
+  let amountOfItems = cart.reduce((totalItems, item) => {
+    totalItems += item.qty;
+    return totalItems;
+  }, 0);
+  cartCounter.innerHTML = amountOfItems;
+}
+
+//function that delete items from cart
 function deleteItem(e) {
-  const element = e.currentTarget.parentElement.parentElement;
-  const id = element.dataset.id;
-  cartCard.removeChild(element);
+  e.preventDefault();
+  let producto, productoID;
+  if(e.target.classList.contains('delete-btn')){
+    e.target.parentElement.parentElement.remove();
+    producto = e.target.parentElement.parentElement;
+    productoID = producto.querySelector('button').getAttribute('data-id');
+  }
   // remove from local storage
-  removeFromLocalStorage(id);
+  removeFromLocalStorage(productoID);
   cart = getLocalStorage();
   displayCart(cart);
 }
@@ -175,6 +189,13 @@ function addToLocalStorage(id, burger, price, qty) {
     items.push(itemToadd);
   }
   localStorage.setItem('cart', JSON.stringify(items));
+}
+
+// get Items 
+function getLocalStorage() {
+  return localStorage.getItem("cart")
+  ? JSON.parse(localStorage.getItem("cart"))
+  : [];
 }
 
 // remove Item
@@ -198,18 +219,4 @@ function removeFromLocalStorage(id){
 //   });
 //   localStorage.setItem('list', JSON.stringify(items));
 // }
-
-// get Items 
-function getLocalStorage() {
-  return localStorage.getItem("cart")
-  ? JSON.parse(localStorage.getItem("cart"))
-  : [];
-}
-
-
-
-
-
-
-
 

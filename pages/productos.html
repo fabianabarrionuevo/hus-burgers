@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- fav icon-->
     <link rel="shortcut icon" href="../multimedia/img/logoHus.jpg" type="image/x-icon">
+    <!-- sweet alert-->
+    <link rel="stylesheet" href="../node_modules/@sweetalert2/theme-dark/dark.css">
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <title>Productos | HUS Burgers</title>
   </head>
 <body>
@@ -60,6 +63,10 @@
             <i class="fas fa-sun"></i>
           </span>
         </button>
+        <a href="#cart-section" class="shop-cart-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-counter">0</span>
+        </a>
          <!-- Barra de navegacion-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
@@ -140,30 +147,40 @@
             </article> -->
       
       </div>
-      <section class="cart-container">
+      <section id="cart-section">
         <h2 class="pageTitle">Detalle de tu compra</h2>
         <div class="cart">
-          <!-- <article class="cart-item">
-            <ul class="item-detail">
-              <li>Burger Tradicional</li>
-              <li>1</li>
-              <li>$ 160</li>
-            </ul>
-            <div class="btn-container">
-              <button type="button" class="edit-btn">
-                <i class="fas fa-edit"></i>
-              </button>
-              <button type="button" class="delete-btn">
-                <i class="fas fa-trash"></i>
-              </button>
-            </div>
-          </article> -->
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="tbody-cart">
+              <!-- <tr>
+                  <td class="td-name">Burger tradicional</td>
+                  <td class="td-qty">1</td>
+                  <td class="td-price">$ 160</td>
+                  <td class="td-btn">
+                    <button type="button" class="edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </td>
+                  <td class="td-btn">
+                    <button type="button" class="delete-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+              </tr> -->
+            </tbody>
+            <tfoot class="tfooter-cart"></tfoot>
+          </table>
         </div>
         <div class="totalCart">
           <!-- <p>El total de su compra es $ <span id="totalPrice"></span></p> -->
-        </div>
-        <div class="totalCartDollar">
-          <p class="totalDolarText"></p>
         </div>
       </section>
   </main>
@@ -203,10 +220,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="../scripts/switchTheme.js"></script>
-  <script src="../scripts/class.js"></script>
   <script src="../scripts/data.js"></script>
   <script src="../scripts/globalVariables.js"></script>
-  <script src="../scripts/functions.js"></script>
+  <script src="../scripts/cart.js"></script>
   <script src="../scripts/index.js"></script>
 </body>
 </html>

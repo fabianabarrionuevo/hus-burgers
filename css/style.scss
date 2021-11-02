@@ -142,7 +142,7 @@ a{
 	height: 32px;
   position: absolute;
   top: 0.8rem;
-  right: 3.8rem;
+  right: 1.8rem;
 }
 .switch-theme-button.light .switch-theme-icon {
 	transform: translateX(30px);
@@ -159,6 +159,32 @@ a{
 	align-items: center;
 	border-radius: 50%;
 	font-size: 1.4em;
+}
+
+.shop-cart-button {
+  padding: 0;
+  margin: 0;
+	color: $baseColor-white;
+  border: none;
+	background-color: transparent;
+  position: absolute;
+  top: 4.5rem;
+  right: 2.5rem;
+  &:hover {
+    .cart-counter{
+      color: $baseColor-yellow;
+    }
+    color: $baseColor-yellow;
+  }
+  .fa-shopping-cart {
+    font-size: 1.4rem;
+  }
+  .cart-counter {
+    color: $baseColor-white;
+    position: relative;
+    top: -13px;
+    right: 5px;
+  }
 }
 
 .navbar-toggler {
@@ -488,13 +514,13 @@ main {
     }
   }
 
-  .cart-container {
+  #cart-section {
     background-color: $baseColor-black;
     box-shadow: 8px 10px 15px 2px #000;
     border-radius: 10px;
     min-height: 350px;
-    padding: 1.5rem;
-    margin: 2rem;
+    padding: 0.8rem;
+    margin: 0;
     font-size: 1.1rem;
     p {
       text-align: center;
@@ -502,71 +528,44 @@ main {
       bottom: 1px;
     }
     .cart {
-      padding: 1rem;
       min-height: 250px;
-      .cart-item {
-        display: flex;
-        justify-content: center;
+      padding: 0;
+      .cart-table {
+        margin: 0 auto;
+        td, th {
+          padding: 5px;
+          text-align: center;
+        } 
       }
-      .item-detail {
-        text-transform: capitalize;
-        padding: 0 1rem;
-        display: flex;
-        
-        li {
-          padding: 0 0.5rem;
-          &:first-child {
-            min-width: 20rem;
-          }
-        }
+      .edit-btn, .delete-btn {
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
+        font-size: 1rem;
+        margin: 0 0.15rem;
+        transition: var(--transition);
+      }
+      .edit-btn {
+        color: #01ff01;
       }
       
-      .btn-container {
-        align-self: center;
-        margin-left: 4rem;
-        .edit-btn, .delete-btn {
-          background-color: transparent;
-          border-color: transparent;
-          cursor: pointer;
-          font-size: 1rem;
-          margin: 0 0.15rem;
-          transition: var(--transition);
-        }
-        .edit-btn {
-          color: #01ff01;
-        }
-        
-        .edit-btn:hover {
-          color: rgb(0, 218, 0);
-        }
-        
-        .delete-btn {
-          color: #ff0808c4;
-        }
-        
-        .delete-btn:hover {
-          color: rgb(219, 0, 0);
-        }
+      .edit-btn:hover {
+        color: rgb(0, 218, 0);
       }
+      
+      .delete-btn {
+        color: #ff0808c4;
+      }
+      
+      .delete-btn:hover {
+        color: rgb(219, 0, 0);
+      }
+      
     }
     .totalCart {
     display: flex;
     flex-direction: column;
     align-items: center;
-      .dolar{
-        width: fit-content;
-        padding: 0 0.5rem;
-        border: transparent;
-        border-radius: 5px;
-        background-color: $baseColor-yellow;
-        color: $baseColor-black;
-        &:hover {
-          background-color: darken($baseColor-yellow, 5%);
-          color: $baseColor-white;
-          font-weight: 600;
-          transition: all 0.2s;
-        }
-      }
     }
     .resert-cart{
       text-align: center;
@@ -882,7 +881,17 @@ form {
       }
     }
   }
+
+  #cart-section {
+    margin: 1rem;
+    padding: 1.5rem;
+    .cart {
+      padding: 1rem;
+    }
+  }
 }
+
+
 
 @media only screen and (min-width: 992px) {
 

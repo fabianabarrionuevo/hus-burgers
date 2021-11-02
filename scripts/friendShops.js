@@ -8,7 +8,7 @@ class friendShops {
 }
 
 
-//creo locales amigos a partir de la clase
+//create local friends from the class
 
 const aztaShop = new friendShops(
 "Azta, Carnes y Sabores",
@@ -108,13 +108,13 @@ const shellSantaRosa = new friendShops(
   "../multimedia/img/locales-amigos/local-amigo-shell-icon.jpg"
 );       
 
-//guardo los locales en un array
+//save local friends in an Array
 let shops = [aztaShop, botanicoSur, botanico, estanciasLucia, proveedorGourmet, encuentroDeSabores, despensaAriel, distribuidoraBR, fiambreriaDelBoulevard, huevosCamperos, islaBonita, toriPollo, fiambreriaLaCalera, shellSantaRosa];
 
 
 const shopsContainer = document.querySelector('.friendShop');
 
-//funcion que muestra dinamicamente los locales almacenados en array
+//function that dynamically shows the local friends stored in array
 function displayFriendShops(shops) {
   let displayShops = shops.map(item =>{
     console.log(item);
