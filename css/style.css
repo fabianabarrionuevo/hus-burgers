@@ -507,16 +507,16 @@ main {
   position: relative;
   bottom: 1px;
 }
+#cart-section td, #cart-section th {
+  padding: 5px;
+  text-align: center;
+}
 #cart-section .cart {
   min-height: 250px;
   padding: 0;
 }
 #cart-section .cart .cart-table {
   margin: 0 auto;
-}
-#cart-section .cart .cart-table td, #cart-section .cart .cart-table th {
-  padding: 5px;
-  text-align: center;
 }
 #cart-section .cart .edit-btn, #cart-section .cart .delete-btn {
   background-color: transparent;
@@ -543,9 +543,26 @@ main {
   flex-direction: column;
   align-items: center;
 }
-#cart-section .resert-cart {
+#cart-section .totalCart button {
+  border: 0;
+  border-radius: 0.8rem;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  color: #fefbf9;
+  margin: 0.5rem;
+}
+#cart-section .totalCart .end-cart {
+  background-color: #00da00;
+}
+#cart-section .totalCart .end-cart:hover {
+  background-color: #01ff01;
+}
+#cart-section .totalCart .reset-cart {
   text-align: center;
   background-color: #ea3048;
+}
+#cart-section .totalCart .reset-cart:hover {
+  background-color: #db0000;
 }
 
 /* List / Maps of products images */

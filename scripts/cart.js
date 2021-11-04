@@ -1,10 +1,8 @@
 
 const productContainer = document.querySelector('.main-container');
 const buttonCategories = document.querySelector('.products-categories');
-const cartSection = document.querySelector('.cart-container');
 const cartBody = document.querySelector('.tbody-cart');
-const cartFooter = document.querySelector('.tfooter-cart');
-const totalCartContainer = document.querySelector('.totalCart');
+const cartFooter = document.querySelector('.footer-cart');
 const cartCounter = document.querySelector('.cart-counter');
 
 
@@ -103,22 +101,20 @@ const addToCart = (e) => {
       showConfirmButton: false,
       timer: 1000,
       background: '#151719',
-      
     });
+    
+    displayCart();
   }
-  cart = getLocalStorage();
-  displayCart(cart);
 }
+
 
 //function that shows cart
 const displayCart = () => {
   let cart = getLocalStorage();
   showTotals(cart);
   if(!cart || cart.length <= 0){
-    let messageContainer = document.createElement('p');
-    let message = document.createTextNode("Aún no agregaste nada al carrito");
-    messageContainer.append(message);
-    cartBody.append(messageContainer);
+    let emptyCart = `<td colspan="3"><p>Aún no agregaste nada al carrito</p></td>`;
+    cartBody.innerHTML = emptyCart;
     const totalPrice = ``;
     cartFooter.innerHTML = totalPrice;
   } else {
@@ -148,8 +144,15 @@ const showTotals = (cart) => {
   }, 0);
 
   if(totalCart > 0){
-    const totalPrice = `<td colspan="3">El total de su compra es $${totalCart}</td>`;
+    const totalPrice = `<tr><td colspan="3">El total de su compra es $${totalCart}</td></tr>
+                        <tr><td colspan="1"><button type="button" class="end-cart">finalizar compra</button></td>
+                            <td colspan="1"><button type="button" class="reset-cart">vaciar carrito</button></td>
+                        </tr>`; 
     cartFooter.innerHTML = totalPrice;
+    let endCart = document.querySelector('.endCart');
+    // endCart.addEventListener('click', (e) => goToPay(e));
+    let resetCart = document.querySelector('.reset-cart');
+    resetCart.addEventListener('click', cleanCart);
   }
 
   let amountOfItems = cart.reduce((totalItems, item) => {
@@ -157,6 +160,12 @@ const showTotals = (cart) => {
     return totalItems;
   }, 0);
   cartCounter.innerHTML = amountOfItems;
+}
+
+//function that delete all items
+const cleanCart = () => {
+  localStorage.clear();
+  displayCart();
 }
 
 //function that delete items from cart
