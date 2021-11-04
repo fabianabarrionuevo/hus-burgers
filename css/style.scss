@@ -587,7 +587,20 @@ main {
           background-color: rgb(219, 0, 0);
         }
       }
+      .send-order-form {
+        display: none;
+        input[type="submit"]{
+          margin-top: 0.5rem;
+          background-color: rgb(0, 218, 0);
+          &:hover {
+            background-color: #01ff01;
+          } 
+        }
       }
+      .send-order-form.active {
+        display: block;
+      }
+    }
   }
 
 /* List / Maps of products images */

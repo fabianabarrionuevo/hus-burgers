@@ -4,7 +4,8 @@ const buttonCategories = document.querySelector('.products-categories');
 const cartBody = document.querySelector('.tbody-cart');
 const cartFooter = document.querySelector('.footer-cart');
 const cartCounter = document.querySelector('.cart-counter');
-
+const sendOrderForm = document.querySelector('.send-order-form');
+const btnSenOrder = document.querySelector('.send-order-btn');
 
 
 //function that dynamically adds each burger item from the product array.
@@ -20,7 +21,7 @@ function displayBurgerOptions(burgers) {
         <p>${item.description}</p>
         <ul class="button-list">
           <li class="button-item">Pack de 240 g. <span>$${item.price}</span><br></li>
-          <li class="button-item"><button class="comprar" data-id="${item.classBurger}">comprar</button></li>
+          <li class="button-item"><button class="comprar" data-id="${item.classBurger}">agregar</button></li>
         </ul>
       </div>
     </article>`;
@@ -148,10 +149,11 @@ const showTotals = (cart) => {
                             <td colspan="1"><button type="button" class="reset-cart">vaciar carrito</button></td>
                         </tr>`; 
     cartFooter.innerHTML = totalPrice;
-    let endCart = document.querySelector('.endCart');
-    // endCart.addEventListener('click', (e) => goToPay(e));
+    let endCart = document.querySelector('.end-cart');
+    endCart.addEventListener('click', endOrder);
     let resetCart = document.querySelector('.reset-cart');
     resetCart.addEventListener('click', cleanCart);
+    btnSenOrder.addEventListener('click', e => sendOrder(e));
   }
 
   let amountOfItems = cart.reduce((totalItems, item) => {
@@ -160,6 +162,27 @@ const showTotals = (cart) => {
   }, 0);
   cartCounter.innerHTML = amountOfItems;
 }
+
+const endOrder = () => {
+  sendOrderForm.classList.add("active");
+}
+
+
+const sendOrder = (e) => {
+  e.preventDefault();
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: `Muchas gracias por tu compra! 
+    A la brevedad nos pondremos en contacto para enviar tu pedido.`,
+    showConfirmButton: false,
+    timer: 4000,
+    background: '#fefbf9',
+  });
+  sendOrderForm.classList.remove("active");
+  cleanCart();
+}
+
 
 //function that delete all items
 const cleanCart = () => {

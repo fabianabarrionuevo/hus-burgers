@@ -564,6 +564,19 @@ main {
 #cart-section .totalCart .reset-cart:hover {
   background-color: #db0000;
 }
+#cart-section .totalCart .send-order-form {
+  display: none;
+}
+#cart-section .totalCart .send-order-form input[type=submit] {
+  margin-top: 0.5rem;
+  background-color: #00da00;
+}
+#cart-section .totalCart .send-order-form input[type=submit]:hover {
+  background-color: #01ff01;
+}
+#cart-section .totalCart .send-order-form.active {
+  display: block;
+}
 
 /* List / Maps of products images */
 .item-tradicional .item__image {

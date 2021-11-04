@@ -97,7 +97,7 @@
       <button class="filter-btn" type="button">boxes</button> -->
     </nav>
     <!-- Products Section -->
-    <div class="main-container">
+    <div class="main-container">|
         <!-- <article class="item-tradicional">
           <div class="item">
             <div class="item__image"></div>
@@ -181,7 +181,23 @@
         </div>
         <div class="totalCart">
          <table class="footer-cart"></table>
+         <form action="" method="POST" class="send-order-form" >
+           <label for="name" >Ingresa tu nombre</label>
+           <input type="text" class="form-control" name="name" id="name" autocomplete="name" maxlength placeholder="Nombre Apellido" required>
+
+           <label for="email">Ingresa tu email</label>
+           <input type="email" class="form-control" name="email" id="email" autocomplete="email" maxlength placeholder="correo@gmail.com" required>
+
+           <label for="telefono">Ingresa tu telélfono</label>
+           <input type="tel" class="form-control" name="telefono" id="telefono" autocomplete="tel" maxlength placeholder="54 351 999 9999" required>
+
+           <label for="pago">Ingresa la forma de pago</label>
+           <input type="text" class="form-control" name="pago" id="pago" maxlength="20" placeholder="ej. Efectivo" required>
+
+           <input type="submit" class="btn btn-success mb-3 send-order-btn" value="Enviar">
+         </form>
         </div>
+
       </section>
   </main>
 
