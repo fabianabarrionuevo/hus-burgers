@@ -102,9 +102,8 @@ const addToCart = (e) => {
       timer: 1000,
       background: '#151719',
     });
-    
-    displayCart();
   }
+  displayCart();
 }
 
 
