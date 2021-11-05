@@ -1,4 +1,3 @@
-
 const productContainer = document.querySelector('.main-container');
 const buttonCategories = document.querySelector('.products-categories');
 const cartBody = document.querySelector('.tbody-cart');

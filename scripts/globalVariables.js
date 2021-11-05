@@ -2,3 +2,4 @@
 let burgerOptions = JSON.parse(dataOfProducts);
 
 let cart = [];
+
