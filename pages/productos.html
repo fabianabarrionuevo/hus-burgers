@@ -182,19 +182,28 @@
         <div class="totalCart">
          <table class="footer-cart"></table>
          <form action="" method="POST" class="send-order-form" >
-           <label for="name" >Ingresa tu nombre</label>
-           <input type="text" class="form-control" name="name" id="name" autocomplete="name" maxlength placeholder="Nombre Apellido" required>
+           <div class="form_group" id="group_name">
+            <label for="name" >Ingresa tu nombre</label>
+            <input type="text" class="form-control" name="name" id="name" autocomplete="name" maxlength="30" placeholder="Nombre Apellido" required>
+            <p class="error-message" id="error-message-name">Debe completar el campo y el mismo debe contener solo letras.</p>
+            </div>
+           <div class="form_group" id="group_email">
+            <label for="email">Ingresa tu email</label>
+            <input type="email" class="form-control" name="email" id="email" autocomplete="email" maxlength="30" placeholder="correo@gmail.com" required>
+            <p class="error-message" id="error-message-email">Debe completar el campo y debe ser un email correcto.</p>
+          </div>
+           <div class="form_group" id="group_tel">
+            <label for="tel">Ingresa tu teléfono</label>
+            <input type="tel" class="form-control" name="tel" id="tel" autocomplete="tel" maxlength="15" placeholder="54 351 999 9999" required>
+            <p class="error-message" id="error-message-tel">Debe completar el campo y el mismo debe contener solo numeros.</p>
+          </div>
+           <div class="form_group" id="group_payment">
+            <label for="payment">Ingresa la forma de pago</label>
+            <input type="text" class="form-control" name="payment" id="payment" maxlength="20" placeholder="ej. Efectivo" required>
+            <p class="error-message" id="error-message-payment">Debe completar el campo y el mismo debe contener solo letras.</p>
+          </div>
 
-           <label for="email">Ingresa tu email</label>
-           <input type="email" class="form-control" name="email" id="email" autocomplete="email" maxlength placeholder="correo@gmail.com" required>
-
-           <label for="telefono">Ingresa tu telélfono</label>
-           <input type="tel" class="form-control" name="telefono" id="telefono" autocomplete="tel" maxlength placeholder="54 351 999 9999" required>
-
-           <label for="pago">Ingresa la forma de pago</label>
-           <input type="text" class="form-control" name="pago" id="pago" maxlength="20" placeholder="ej. Efectivo" required>
-
-           <input type="submit" class="btn btn-success mb-3 send-order-btn" value="Enviar">
+           <button type="submit" class="btn btn-success mb-3 send-order-btn">Enviar</button>
          </form>
         </div>
 
@@ -237,8 +246,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
   <script src="../scripts/switchTheme.js"></script>
-  <script src="../scripts/data.js"></script>
-  <script src="../scripts/globalVariables.js"></script>
+  <script src="../scripts/form.js"></script>
   <script src="../scripts/cart.js"></script>
   <script src="../scripts/index.js"></script>
 </body>

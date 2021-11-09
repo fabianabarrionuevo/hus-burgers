@@ -6,6 +6,7 @@ const cartCounter = document.querySelector('.cart-counter');
 const sendOrderForm = document.querySelector('.send-order-form');
 const btnSenOrder = document.querySelector('.send-order-btn');
 
+let cart = [];
 
 //function that dynamically adds each burger item from the product array.
 function displayBurgerOptions(burgers) {
@@ -15,11 +16,11 @@ function displayBurgerOptions(burgers) {
         <div class="item__image"></div>
       </div>
       <div class="description">
-        <h4>${item.burgerName}</h4>
+        <h4 class="item-title">${item.burgerName}</h4>
         <hr>
         <p>${item.description}</p>
         <ul class="button-list">
-          <li class="button-item">Pack de 240 g. <span>$${item.price}</span><br></li>
+          <li class="button-item">Pack de 240 g. $<span>${item.price}</span><br></li>
           <li class="button-item"><button class="comprar" data-id="${item.classBurger}">agregar</button></li>
         </ul>
       </div>
@@ -30,13 +31,13 @@ function displayBurgerOptions(burgers) {
 
   const btnComprar = document.querySelectorAll('.comprar');
   btnComprar.forEach(btn => {
-    btn.addEventListener('click',addToCart);
+    btn.addEventListener('click', (e) => addToCart(e));
   });
 
 }
 
 //function that dynamically adds buttons to filter product categories
-function displayCategoriesButtons() {
+function displayCategoriesButtons(burgerOptions) {
   //create an array with categories
   const categories = burgerOptions.reduce(function(values, item){
     if(!values.includes(item.category)){
@@ -87,16 +88,17 @@ const inStock = (quantity, stock) => {
 //function that adds products to cart
 const addToCart = (e) => {
   e.preventDefault();
-  const classBurgerSelected = e.currentTarget.dataset.id;
-  const burgerSelected = burgerOptions.find(burger => burger.classBurger === classBurgerSelected);
+  const burgerSelectedID = e.currentTarget.dataset.id;
+  const classBurgerSelected = e.currentTarget.parentElement.parentElement.parentElement.querySelector(".item-title").textContent;
+  const priceBurgerSelected = e.currentTarget.parentElement.parentElement.querySelector("span").textContent;
   let quantity = 1;
-  if(inStock(quantity, burgerSelected.stock)){
-    addToLocalStorage(classBurgerSelected, burgerSelected.burgerName, burgerSelected.price, quantity);
-    burgerSelected.stock -= quantity;
+  if(inStock(quantity, classBurgerSelected.stock)){
+    addToLocalStorage(burgerSelectedID, classBurgerSelected, priceBurgerSelected, quantity);
+    burgerSelectedID.stock -= quantity;
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: `${burgerSelected.burgerName} 
+      title: `${classBurgerSelected}
       Producto agregado`,
       showConfirmButton: false,
       timer: 1000,
@@ -152,7 +154,6 @@ const showTotals = (cart) => {
     endCart.addEventListener('click', endOrder);
     let resetCart = document.querySelector('.reset-cart');
     resetCart.addEventListener('click', cleanCart);
-    btnSenOrder.addEventListener('click', e => sendOrder(e));
   }
 
   let amountOfItems = cart.reduce((totalItems, item) => {
@@ -162,31 +163,16 @@ const showTotals = (cart) => {
   cartCounter.innerHTML = amountOfItems;
 }
 
+//function that shows final form
 const endOrder = () => {
   sendOrderForm.classList.add("active");
 }
-
-
-const sendOrder = (e) => {
-  e.preventDefault();
-  Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: `Muchas gracias por tu compra! 
-    A la brevedad nos pondremos en contacto para enviar tu pedido.`,
-    showConfirmButton: false,
-    timer: 4000,
-    background: '#fefbf9',
-  });
-  sendOrderForm.classList.remove("active");
-  cleanCart();
-}
-
 
 //function that delete all items
 const cleanCart = () => {
   localStorage.clear();
   displayCart();
+  sendOrderForm.classList.remove('active');
 }
 
 //function that delete items from cart
@@ -202,6 +188,7 @@ function deleteItem(e) {
   removeFromLocalStorage(productoID);
   cart = getLocalStorage();
   displayCart(cart);
+  sendOrderForm.classList.remove('active');
 }
 
 // **** LOCAL STORAGE ****
@@ -238,15 +225,5 @@ function removeFromLocalStorage(id){
   })
   localStorage.setItem('cart', JSON.stringify(items));
 }
-// //edit item from localStorage
-// function editLocalStorage(id, value){
-//   let items = getLocalStorage();
-//   items = items.map(item => {
-//     if(item.id === id){
-//       item.value = value;
-//     }
-//     return item;
-//   });
-//   localStorage.setItem('list', JSON.stringify(items));
-// }
+
 

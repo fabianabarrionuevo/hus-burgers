@@ -555,7 +555,7 @@ main {
   background-color: #00da00;
 }
 #cart-section .totalCart .end-cart:hover {
-  background-color: #01ff01;
+  background-color: #1ed12d;
 }
 #cart-section .totalCart .reset-cart {
   text-align: center;
@@ -566,13 +566,38 @@ main {
 }
 #cart-section .totalCart .send-order-form {
   display: none;
+  max-width: 17rem;
 }
-#cart-section .totalCart .send-order-form input[type=submit] {
+#cart-section .totalCart .send-order-form input {
+  width: 17rem;
+}
+#cart-section .totalCart .send-order-form .error-message {
+  display: none;
+}
+#cart-section .totalCart .send-order-form .form-group-correcto {
+  color: #1ed12d;
+  opacity: 1;
+}
+#cart-section .totalCart .send-order-form .form-group-correcto input {
+  border: 2px splid #1ed12d;
+}
+#cart-section .totalCart .send-order-form .form-group-incorrecto {
+  color: #ea3048;
+  opacity: 1;
+}
+#cart-section .totalCart .send-order-form .form-group-incorrecto input {
+  border: 2px solid #ea3048;
+}
+#cart-section .totalCart .send-order-form .form-group-incorrecto .error-message-incorrecto {
+  display: block;
+  color: #ea3048;
+}
+#cart-section .totalCart .send-order-form button[type=submit] {
   margin-top: 0.5rem;
   background-color: #00da00;
 }
-#cart-section .totalCart .send-order-form input[type=submit]:hover {
-  background-color: #01ff01;
+#cart-section .totalCart .send-order-form button[type=submit]:hover {
+  background-color: #1ed12d;
 }
 #cart-section .totalCart .send-order-form.active {
   display: block;

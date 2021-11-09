@@ -6,10 +6,11 @@
       if (success === "success") {
   // funcion que muestra todas las variedades de burgers
         displayBurgerOptions(response);
+        displayCategoriesButtons(response);
       }
     });
     // displayBurgerOptions(burgerOptions);
-     displayCategoriesButtons();
+     
      displayCart();
   })
   

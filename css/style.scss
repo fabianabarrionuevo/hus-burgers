@@ -577,7 +577,7 @@ main {
       .end-cart {
         background-color: rgb(0, 218, 0);
         &:hover {
-          background-color: #01ff01;
+          background-color: #1ed12d;
         } 
       }
       .reset-cart{
@@ -589,11 +589,37 @@ main {
       }
       .send-order-form {
         display: none;
-        input[type="submit"]{
+        max-width: 17rem;
+        input {
+          width: 17rem;
+        }
+        .error-message{
+          display: none;
+        }
+        .form-group-correcto {
+          color: #1ed12d;
+          opacity: 1;
+          input {
+            border: 2px splid #1ed12d;
+          }
+        }
+        .form-group-incorrecto {
+          color: $baseColor-red;
+          opacity: 1;
+          input {
+            border: 2px solid $baseColor-red;
+          }
+          .error-message-incorrecto{
+            display: block;
+            color: $baseColor-red;
+          }
+        }
+
+        button[type="submit"]{
           margin-top: 0.5rem;
           background-color: rgb(0, 218, 0);
           &:hover {
-            background-color: #01ff01;
+            background-color: #1ed12d;
           } 
         }
       }
